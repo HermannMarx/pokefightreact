@@ -9,12 +9,25 @@
 
 Stored in src/views
 
-**On main page:**
+### Main page
+
+State Variables:
+
+- allPokemon [] (API request)
+- pokemonFighters []
 
 1. _Header_
-2. _PokemonFight_: Route "/". Shown when Pokemon selected
+2. _PokemonFight_: Route "/".
 
-- _PokemonFighter_: includes a property "side": "left", "right". Is the property really needed or is it enough with the position in the fight Array?
+- prop: pokemonFighters []
+
+Shown when:
+
+- 1 Pokemon selected?
+- 2 Pokemon selected?
+- click on button Fight? If so, show button only if 2 pokemon selected
+
+  - 2x Component _PokemonFighter_
 
 3. _PokemonFightResult_: shown when fight ends.
 
@@ -23,9 +36,12 @@ Stored in src/views
 
 4. _AllPokemon_: Route "/" and "/pokemon":
 
+- prop allPokemon
 - Component _PokemonList_
 
-5. _PokemonDetails_: Route "pokemon/{id}": only Pokemon with id = _id_
+5. _PokemonDetails_ (Pokemon pop-up): Route "pokemon/{id}": only Pokemon with id = _id_
+
+- API request with param _id_ => pokemon => Component _PokemonDetailed_
 
 ## Components
 
@@ -33,18 +49,27 @@ Stored in src/components
 
 **Pokemon**
 
-- _PokemonList_ (main page)
+- _PokemonList_ (main page):
 
+  - prop allPokemon -> map
   - _Pokemon_ (main page)
+    - prop pokemon
 
 - _PokemonDetailed_ (Pokemon pop-up)
+  - prop pokemon (from API request in _PokemonDetails_)
+  - breadcrum with name, type & base (API request for each)
 
 **Pokemon fight**
 
-- _PokemonFighter_: contains
-  - picture,
-  - base statistics (HP, attack, defense, special attack (?), special defense (?), speed (?))
-  - buttons: attack, defend, run (?)
+- _PokemonFighter_:
+
+- prop: pokemon from _PokemonFight_.pokemonFighters
+
+contains:
+
+- picture,
+- base statistics (HP, attack, defense, special attack (?), special defense (?), speed (?))
+- buttons: attack, defend, run (?)
 
 **Filters (nice to have)**
 
