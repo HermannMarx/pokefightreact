@@ -5,6 +5,9 @@ function App() {
   return (
     <div className="App">
       <Switch>
+        <Route path="/pokemon/fight">
+          <ViewPokeFight />
+        </Route>
         <Route path="/pokemon/:id/:info">
           <ViewPokemonInfo />
         </Route>
