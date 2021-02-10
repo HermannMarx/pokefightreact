@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
-
-import { Button } from "@material-ui/core";
-
-import AllPokemon from "./views/AllPokemon";
-
-import axios from "axios";
-
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import AllPokemon from './views/AllPokemon';
+import SinglePokemon from './views/SinglePokemon';
+import axios from 'axios';
+import './App.css';
 
 function App() {
   const [allPokemon, setAllPokemon] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://wbsgroup4pokefight.herokuapp.com/pokemon")
-      .then((response) => {
+      .get('https://wbsgroup4pokefight.herokuapp.com/pokemon')
+      .then(response => {
         setAllPokemon(response.data);
       });
   }, []);
@@ -30,12 +26,12 @@ function App() {
         </Route>
         <Route path="/pokemon/:id/:info">
           <ViewPokemonInfo />
-        </Route>
-        <Route path="/pokemon/:id">
-          <ViewPokemon />
         </Route>*/}
+          <Route path="/pokemon/:id">
+            <SinglePokemon />
+          </Route>
 
-          <Route path={["/", "/pokemon"]}>
+          <Route path={['/', '/pokemon']}>
             <AllPokemon allPokemon={allPokemon} />
           </Route>
         </Switch>
