@@ -5,7 +5,6 @@ import axios from 'axios';
 
 export default function SinglePokemon() {
   const { id } = useParams();
-  const [isLoading, setLoading] = useState(true);
   const [pokemon, setPokemon] = useState();
 
   useEffect(() => {
@@ -13,22 +12,20 @@ export default function SinglePokemon() {
       .get(`https://wbsgroup4pokefight.herokuapp.com/pokemon/${id}`)
       .then(response => {
         setPokemon(response.data);
-        setLoading(false);
+        console.log(response);
       });
   }, []);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div>
-      <PokemonDetailed
-        id={pokemon[0].id}
-        name={pokemon[0].name.english}
-        base={pokemon[0].base}
-        type={pokemon[0].type}
-      />
+      {pokemon ? (
+        <PokemonDetailed
+          id={pokemon[0].id}
+          name={pokemon[0].name.english}
+          base={pokemon[0].base}
+          type={pokemon[0].type}
+        />
+      ) : null}
     </div>
   );
 }
