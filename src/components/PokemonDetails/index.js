@@ -12,6 +12,7 @@ export default function PokemonDetails({ id, name, base, type }) {
       <h3>Entry: {pokedexId}</h3>
       <h1>{name}</h1>
       <p>Type: {type[0]}</p>
+      {type.length === 2 ? <p>{type[1]}</p> : null}
       <p>Health Points: {base['HP']}</p>
 
       <img src={url} />
