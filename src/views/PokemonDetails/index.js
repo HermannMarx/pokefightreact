@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PokemonDetails from '../../components/PokemonDetailed';
+import PokemonDetailed from '../../components/PokemonDetailed';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -23,7 +23,7 @@ export default function SinglePokemon() {
 
   return (
     <div>
-      <PokemonDetails
+      <PokemonDetailed
         id={pokemon[0].id}
         name={pokemon[0].name.english}
         base={pokemon[0].base}
