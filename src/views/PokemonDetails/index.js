@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PokemonDetails from '../../components/PokemonDetails';
+import PokemonDetails from '../../components/PokemonDetailed';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 

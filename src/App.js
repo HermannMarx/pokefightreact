@@ -28,7 +28,7 @@ function App() {
           <ViewPokemonInfo />
         </Route>*/}
           <Route path="/pokemon/:id">
-            <SinglePokemon />
+            <PokemonDetails />
           </Route>
 
           <Route path={['/', '/pokemon']}>
