@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-export default function PokemonDetails({ id, name, base, type }) {
+export default function PokemonDetailed({ id, name, base, type }) {
   const pokedexId = '#' + id.toString().padStart(3, '0');
   const url =
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
