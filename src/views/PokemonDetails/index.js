@@ -14,7 +14,6 @@ export default function SinglePokemon() {
       .get(`https://wbsgroup4pokefight.herokuapp.com/pokemon/${id}`)
       .then(response => {
         setPokemon(response.data);
-        console.log('This is details: ' + response);
         setLoading(false);
       });
   }, []);
