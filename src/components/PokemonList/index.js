@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import Pokemon from "../Pokemon";
+import Pokemon from '../Pokemon';
 
-import "./index.css";
+import './index.css';
 
 export default function PokemonList({ allPokemon }) {
   return (
     <div className="pokemon-list">
-      {allPokemon.map((pokemon) => {
+      {allPokemon.map(pokemon => {
         return <Pokemon key={pokemon.id} pokemon={pokemon} />;
       })}
     </div>

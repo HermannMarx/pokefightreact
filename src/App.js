@@ -18,6 +18,11 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <div className="logo">
+          <img src="https://fontmeme.com/permalink/210212/0c674bf6450b9b8545003e3d26a223a8.png" />
+        </div>
+      </header>
       {allPokemon.length ? (
         <Switch>
           {/*
@@ -27,9 +32,9 @@ function App() {
         <Route path="/pokemon/:id/:info">
           <ViewPokemonInfo />
         </Route>*/}
-          <Route path="/pokemon/:id">
+          {/* <Route path="/pokemon/:id">
             <PokemonDetails />
-          </Route>
+          </Route> */}
 
           <Route path={['/', '/pokemon']}>
             <AllPokemon allPokemon={allPokemon} />
