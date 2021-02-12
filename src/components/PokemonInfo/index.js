@@ -24,9 +24,9 @@ const PokemonInfo = ({ id }) => {
 
   return (
     <div>
-      <Link to={`/pokemon/:id/base`}>Fight Info</Link>
+      <Link to={`/pokemon/${id}/base`}>Fight Info</Link>
       <Switch>
-        <Route path={`/pokemon/:id/base`}>
+        <Route path={`/pokemon/${id}/base`}>
           <div>HP: {pokemon.HP}</div>
           <div>Attack: {pokemon.Attack}</div>
           <div>Defense: {pokemon.Defense}</div>
