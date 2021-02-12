@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PokemonDetailed from '../../components/PokemonDetailed';
-import { useParams } from 'react-router-dom';
+import { Switch, useParams, Route } from 'react-router-dom';
 import axios from 'axios';
+import PokemonInfo from '../../components/PokemonInfo';
 
 export default function SinglePokemon() {
   const { id } = useParams();
@@ -18,14 +19,13 @@ export default function SinglePokemon() {
 
   return (
     <div>
-      {pokemon ? (
-        <PokemonDetailed
-          id={pokemon[0].id}
-          name={pokemon[0].name.english}
-          base={pokemon[0].base}
-          type={pokemon[0].type}
-        />
-      ) : null}
+      <PokemonDetailed
+        id={pokemon[0].id}
+        name={pokemon[0].name.english}
+        base={pokemon[0].base}
+        type={pokemon[0].type}
+      />
+      <PokemonInfo id={id} />
     </div>
   );
 }
