@@ -19,22 +19,24 @@ function App() {
 
   return (
     <div className="App">
-      <Switch>
-        {/*
+      {allPokemon.length ? (
+        <Switch>
+          {/*
         <Route path="/pokemon/fight">
           <ViewPokeFight />
         </Route>*/}
-        {/* <Route path="/pokemon/:id">
-          <PokemonDetails />
-        </Route> */}
+          <Route path="/pokemon/:id">
+            <PokemonDetails />
+          </Route>
 
-        <Route path={'/pokemon'}>
-          <AllPokemon allPokemon={allPokemon} />
-        </Route>
-        <Route path={'/'}>
-          <LandingPage />
-        </Route>
-      </Switch>
+          <Route path={'/pokemon'}>
+            <AllPokemon allPokemon={allPokemon} />
+          </Route>
+          <Route path={'/'}>
+            <LandingPage />
+          </Route>
+        </Switch>
+      ) : null}
     </div>
   );
 }
