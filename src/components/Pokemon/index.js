@@ -5,29 +5,29 @@ import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import './index.css';
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1.5)
-    },
-    padding: 20,
-    width: 100
-  },
-  avatar: {
-    width: '35%',
-    height: 'auto'
-  },
-  clickable: {
-    width: '100%',
-    height: 'auto'
-  }
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     display: 'flex',
+//     justifyContent: 'center',
+//     flexWrap: 'wrap',
+//     '& > *': {
+//       margin: theme.spacing(1.5)
+//     },
+//     padding: 20,
+//     width: 100
+//   },
+//   avatar: {
+//     width: '35%',
+//     height: 'auto'
+//   },
+//   clickable: {
+//     width: '100%',
+//     height: 'auto'
+//   }
+// }));
 
 export default function Pokemon({ pokemon }) {
-  const classes = useStyles();
+  // const classes = useStyles();
   const pokedexId = '#' + pokemon.id.toString().padStart(3, '0');
   const srcImageUrl =
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +

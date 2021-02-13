@@ -16,9 +16,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    fontFamily: 'Times New Roman'
-  },
   div: {
     margin: 'auto'
   },
@@ -36,6 +33,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'rgb(255, 255, 255, 0.5)'
   },
   expand: {
+    cursor: 'pointer',
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
     transition: theme.transitions.create('transform', {
@@ -58,6 +56,7 @@ export default function PokemonDetailed({ id, name, base, type }) {
     <div className={classes.div}>
       <Card className={classes.card}>
         <CardHeader
+          className={classes.header}
           action={
             <IconButton>
               <Link to="/pokemon">
@@ -70,17 +69,43 @@ export default function PokemonDetailed({ id, name, base, type }) {
         />
         <CardMedia className={classes.media} image={srcUrl} />
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <p>
             Its oversized claw is very powerful, but when it's not in battle,
             the claw just gets in the way.
-          </Typography>
+          </p>
+          <br></br>
+          <table className="info">
+            <th>Type</th>
+            <th>Abilities</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Evolution</th>
+            <tr>
+              <td>Type0</td>
+              <td>Ability1</td>
+              <td>2'04</td>
+              <td>15.2 lbs.</td>
+              <td>Bulbasaur</td>
+            </tr>
+            <tr>
+              <td>Type1</td>
+              <td>Ability2</td>
+              <td></td>
+              <td></td>
+              <td>Ivysaur</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Venusaur</td>
+            </tr>
+          </table>
         </CardContent>
 
         <CardActions disableSpacing>
-          <Typography variant="body1" color="textSecondary" component="p">
-            Test
-          </Typography>
-          <IconButton
+          <span
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded
             })}
@@ -90,22 +115,26 @@ export default function PokemonDetailed({ id, name, base, type }) {
           >
             Stats
             <ExpandMoreIcon />
-          </IconButton>
+          </span>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Health: {base['HP']}</Typography>
-            <Typography paragraph>Attack: {base['Attack']}</Typography>
-            <Typography paragraph>Defense: {base['Defense']}</Typography>
-            <Typography paragraph>
-              Special Attack: {base['Sp. Attack']}
-            </Typography>
-            <Typography paragraph>
-              Special Defense: {base['Sp. Defense']}
-            </Typography>
-            <Typography variant="body1" color="textPrimary" component="p">
-              Speed: {base['Speed']}
-            </Typography>
+            <table className="base">
+              <th>HP</th>
+              <th>Attack</th>
+              <th>Defense</th>
+              <th>Special Attack</th>
+              <th>Special Defense</th>
+              <th>Speed</th>
+              <tr>
+                <td>{base['HP']}</td>
+                <td>{base['Attack']}</td>
+                <td>{base['Defense']}</td>
+                <td>{base['Sp. Attack']}</td>
+                <td>{base['Sp. Defense']}</td>
+                <td>{base['Speed']}</td>
+              </tr>
+            </table>
           </CardContent>
         </Collapse>
       </Card>

@@ -1,1 +1,15 @@
+.info {
+  width: 100%;
+  text-align: center;
+}
+.info th {
+  background-color: rgba(0, 0, 0, 0.26);
+}
 
+.base {
+  width: 100%;
+  text-align: center;
+}
+.base th {
+  background-color: rgba(0, 0, 0, 0.26);
+}

@@ -41,7 +41,7 @@ export default function PokemonDetails() {
   }, []);
   if (isLoading) {
     return (
-      <div className="detailBody">
+      <div className="loading">
         <CircularProgress color="inherit" />
       </div>
     );
