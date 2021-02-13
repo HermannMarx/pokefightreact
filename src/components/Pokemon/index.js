@@ -35,14 +35,6 @@ export default function Pokemon({ pokemon }) {
     '.png';
   return (
     <div className="pokemon-card">
-      {/* <Chip
-        avatar={<Avatar alt="P" src={srcImageUrl} />}
-        label={`${pokedexId} ${pokemon.name.english}`}
-        component="a"
-        href={`/pokemon/${pokemon.id}`}
-        clickable
-        color="inherit"
-      /> */}
       <Link to={`/pokemon/${pokemon.id}`} className="cardLink">
         <img className="listImage" src={srcImageUrl} />
         <span>

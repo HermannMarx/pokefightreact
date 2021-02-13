@@ -12,23 +12,28 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import AddBoxOutlinedIcon from '@material-ui/icons/AddBoxOutlined';
+import CloseIcon from '@material-ui/icons/Close';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    fontFamily: 'Times New Roman'
+  },
   div: {
     margin: 'auto'
   },
   card: {
     maxWidth: 545,
     border: '5px solid #E95049',
-    borderRadius: '10px',
-    backgroundColor: '#E95049'
+    backgroundColor: '#E95030',
+    background: 'rgb(255,255,255)',
+    background:
+      'radial-gradient(circle, #E6BC2F 50%, rgba(0,0,0,0.25252107679009106) 100%)'
   },
   media: {
     paddingTop: '56.25%',
     backgroundSize: 'contain',
-    backgroundColor: 'white'
+    backgroundColor: 'rgb(255, 255, 255, 0.5)'
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -56,7 +61,7 @@ export default function PokemonDetailed({ id, name, base, type }) {
           action={
             <IconButton>
               <Link to="/pokemon">
-                <AddBoxOutlinedIcon />
+                <CloseIcon style={{ color: 'black' }} />
               </Link>
             </IconButton>
           }

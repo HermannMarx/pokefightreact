@@ -6,19 +6,12 @@
   align-items: center;
   border-radius: 10px;
   border: 2px solid black;
-  background: rgb(228, 228, 228);
-  background: linear-gradient(
-    180deg,
-    rgba(228, 228, 228, 1) 80%,
-    rgba(203, 12, 31, 0.562) 100%
-  );
   transition: all 1.5s;
 }
 
 .pokemon-card {
   min-width: 20%;
   padding: 5px;
-  font-family: 'Lexend Mega', sans-serif;
 }
 
 .cardLink:hover {
