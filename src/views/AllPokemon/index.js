@@ -7,7 +7,10 @@ export default function AllPokemon({ allPokemon }) {
   return (
     <div>
       <header>
-        <img src="https://fontmeme.com/permalink/210213/0c674bf6450b9b8545003e3d26a223a8.png" />
+        <img
+          className="logo"
+          src="https://fontmeme.com/permalink/210213/0c674bf6450b9b8545003e3d26a223a8.png"
+        />
       </header>
       <Switch>
         <Route path="/pokemon/:id">

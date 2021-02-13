@@ -20,12 +20,15 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto'
   },
   card: {
-    maxWidth: 545
+    maxWidth: 545,
+    border: '5px solid #E95049',
+    borderRadius: '10px',
+    backgroundColor: '#E95049'
   },
   media: {
     paddingTop: '56.25%',
     backgroundSize: 'contain',
-    backgroundColor: 'grey'
+    backgroundColor: 'white'
   },
   expand: {
     transform: 'rotate(0deg)',

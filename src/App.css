@@ -11,11 +11,6 @@ header {
   height: auto;
 }
 .logo {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-}
-.logo img {
-  height: auto;
-  width: 100%;
-  max-width: max-content;
 }
