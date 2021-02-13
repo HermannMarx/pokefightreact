@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Router } from 'react-router-dom';
 import AllPokemon from './views/AllPokemon';
 import PokemonDetails from './views/PokemonDetails';
 import axios from 'axios';
@@ -28,10 +28,8 @@ function App() {
           {/*
         <Route path="/pokemon/fight">
           <ViewPokeFight />
-        </Route>
-        <Route path="/pokemon/:id/:info">
-          <ViewPokemonInfo />
         </Route>*/}
+
           {/* <Route path="/pokemon/:id">
             <PokemonDetails />
           </Route> */}

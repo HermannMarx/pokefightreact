@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 //Chip-Component:
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
@@ -42,12 +43,12 @@ export default function Pokemon({ pokemon }) {
         clickable
         color="inherit"
       /> */}
-      <a href={`/pokemon/${pokemon.id}`}>
+      <Link to={`/pokemon/${pokemon.id}`} className="cardLink">
         <img className="listImage" src={srcImageUrl} />
         <span>
           {pokedexId} {pokemon.name.english}
         </span>
-      </a>
+      </Link>
     </div>
   );
 }

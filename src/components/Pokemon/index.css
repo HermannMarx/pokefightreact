@@ -1,4 +1,4 @@
-a {
+.cardLink {
   text-decoration: none;
   color: black;
   display: flex;
@@ -21,7 +21,7 @@ a {
   font-family: 'Lexend Mega', sans-serif;
 }
 
-a:hover {
+.cardLink:hover {
   border-radius: 10px;
   background: rgb(203, 12, 31);
   background: linear-gradient(

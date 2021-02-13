@@ -1,4 +1,7 @@
 .detailBody {
+  font-family: 'Lexend Mega', sans-serif;
+  z-index: 1;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;

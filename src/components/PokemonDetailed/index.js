@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 //Card-Component:
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -50,8 +51,10 @@ export default function PokemonDetailed({ id, name, base, type }) {
       <Card className={classes.card}>
         <CardHeader
           action={
-            <IconButton aria-label="settings">
-              <AddBoxOutlinedIcon />
+            <IconButton>
+              <Link to="/pokemon">
+                <AddBoxOutlinedIcon />
+              </Link>
             </IconButton>
           }
           title={name}

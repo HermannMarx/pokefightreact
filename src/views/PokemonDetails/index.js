@@ -5,13 +5,23 @@ import axios from 'axios';
 import PokemonInfo from '../../components/PokemonInfo';
 import './styles.css';
 //Backdrop-Component:
+import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles(theme => ({
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: 'black'
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3)
   }
 }));
 export default function SinglePokemon() {
@@ -21,32 +31,41 @@ export default function SinglePokemon() {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   useEffect(() => {
     axios
       .get(`https://wbsgroup4pokefight.herokuapp.com/pokemon/${id}`)
       .then(response => {
         setPokemon(response.data);
-        console.log(response);
         setLoading(false);
       });
   }, []);
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="detailBody">
+        <CircularProgress color="inherit" />
+      </div>
+    );
   }
   return (
     <div className="detailBody">
-      <Backdrop className={classes.backdrop} open={open}>
-        <PokemonDetailed
-          id={pokemon[0].id}
-          name={pokemon[0].name.english}
-          base={pokemon[0].base}
-          type={pokemon[0].type}
-        />
-      </Backdrop>
+      <Modal
+        className={classes.modal}
+        open={open}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500
+        }}
+      >
+        <Fade in={open}>
+          <PokemonDetailed
+            id={pokemon[0].id}
+            name={pokemon[0].name.english}
+            base={pokemon[0].base}
+            type={pokemon[0].type}
+          />
+        </Fade>
+      </Modal>
     </div>
   );
 }
