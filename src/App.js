@@ -24,11 +24,7 @@ function App() {
           {/*
         <Route path="/pokemon/fight">
           <ViewPokeFight />
-        </Route>*/}
-          {/* <Route path="/pokemon/:id">
-            <PokemonDetails />
-          </Route> */}
-
+          </Route>*/}
           <Route path={'/pokemon'}>
             <AllPokemon allPokemon={allPokemon} />
           </Route>
