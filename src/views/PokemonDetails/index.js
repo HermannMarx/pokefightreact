@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2, 4, 3)
   }
 }));
-export default function SinglePokemon() {
+export default function PokemonDetails() {
   const { id } = useParams();
   const [isLoading, setLoading] = useState(true);
   const [pokemon, setPokemon] = useState();

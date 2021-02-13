@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto'
   },
   card: {
-    maxWidth: 345
+    maxWidth: 545
   },
   media: {
     paddingTop: '56.25%',
