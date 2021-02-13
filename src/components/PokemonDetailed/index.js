@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 //Card-Component:
@@ -41,7 +41,7 @@ export default function PokemonDetailed({ id, name, base, type }) {
   const pokedexId = '#' + id.toString().padStart(3, '0');
   const srcUrl = 'https://cdn.traction.one/pokedex/pokemon/' + id + '.png';
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
