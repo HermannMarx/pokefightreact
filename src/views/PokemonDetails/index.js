@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PokemonDetailed from '../../components/PokemonDetailed';
-import { Switch, useParams, Route } from 'react-router-dom';
+import { Switch, useParams, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import PokemonInfo from '../../components/PokemonInfo';
 import './styles.css';

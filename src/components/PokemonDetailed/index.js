@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto'
   },
   card: {
-    maxWidth: 545,
+    maxWidth: 355,
     border: '5px solid #E95049',
     backgroundColor: '#E95030',
     background: 'rgb(255,255,255)',
