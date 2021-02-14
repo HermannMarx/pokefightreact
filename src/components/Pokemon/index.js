@@ -37,9 +37,9 @@ export default function Pokemon({ pokemon }) {
     <div className="pokemon-card">
       <Link to={`/pokemon/${pokemon.id}`} className="cardLink">
         <img className="listImage" src={srcImageUrl} />
-        <span>
-          {pokedexId} {pokemon.name.english}
-        </span>
+        <span>{pokedexId}</span>
+        <br></br>
+        <span>{pokemon.name.english}</span>
       </Link>
     </div>
   );
