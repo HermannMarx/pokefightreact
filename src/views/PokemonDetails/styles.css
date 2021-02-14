@@ -8,6 +8,8 @@
   height: 100vh;
 }
 .loading {
+  z-index: 1;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
