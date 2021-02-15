@@ -4,6 +4,7 @@ import AllPokemon from './views/AllPokemon/index';
 import LandingPage from './views/LandingPage/LandingPage';
 import PokemonDetails from './views/PokemonDetails/index';
 import axios from 'axios';
+import FightLogic from './Helper/FightLogic/FightLogic';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       .get('https://wbsgroup4pokefight.herokuapp.com/pokemon')
       .then(response => {
         setAllPokemon(response.data);
+        console.log(FightLogic.run(101, 3));
       });
   }, []);
 
