@@ -1,0 +1,17 @@
+.info {
+  text-align: center;
+  font-size: 0.7rem;
+  width: 100%;
+}
+.info th {
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.base {
+  width: 100%;
+  font-size: 0.7em;
+  text-align: center;
+}
+.base th {
+  background-color: rgba(0, 0, 0, 0.26);
+}

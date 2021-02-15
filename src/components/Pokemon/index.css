@@ -1,5 +1,35 @@
-.pokemon-card {
+.cardLink {
+  text-decoration: none;
+  color: black;
   display: flex;
-  flex-wrap: wrap;
-  width: 33%;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.pokemon-card {
+  width: 10%;
+  padding: 5px;
+}
+
+.cardLink:hover {
+  border-radius: 10px;
+  background: rgb(203, 12, 31);
+  background: linear-gradient(
+    180deg,
+    rgba(203, 12, 31, 1) 0%,
+    rgba(253, 255, 255, 1) 20%,
+    rgba(228, 228, 228, 1) 80%,
+    rgba(203, 12, 31, 1) 100%
+  );
+}
+
+@media only screen and (max-width: 600px) {
+  .pokemon-card {
+    width: 45%;
+  }
 }

@@ -2,5 +2,16 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 80%;
+}
+
+.scrollLink {
+  display: flex;
+  position: fixed;
+  right: 2%;
+  top: 50%;
+  flex-direction: column;
+}
+
+.scrollButton {
+  background-color: black;
 }
