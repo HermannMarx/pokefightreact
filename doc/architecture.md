@@ -11,37 +11,36 @@ Stored in src/views
 
 ### Main page
 
-State Variables:
+**State Variables**
 
-- allPokemon [] (API request)
-- pokemonFighters []
+  - allPokemon [] (API request)
+  - pokemonFighters []
 
-1. _Header_
-2. _PokemonFight_: Route "/".
+**Views**
 
-- prop: pokemonFighters []
+  - _Header_
+  - _PokemonFight_: Route "/".
 
-Shown when:
+    - prop: pokemonFighters []
 
-- 1 Pokemon selected?
-- 2 Pokemon selected?
-- click on button Fight? If so, show button only if 2 pokemon selected
+    - 2x Component _PokemonFighter_
+    
+    Shown when:
 
-  - 2x Component _PokemonFighter_
+      - 1 Pokemon selected?
+      - 2 Pokemon selected?
+      - click on button Fight? If so, show button only if 2 pokemon selected    
 
-3. _PokemonFightResult_: shown when fight ends.
+  - _PokemonFightResult_: shown when fight ends.
+        - Text with the winner and info from leaderboard
+        - Button to close fight
 
-- Text with the winner and info from leaderboard
-- Button to close fight
+  - _AllPokemon_: Route "/" and "/pokemon":
+    - prop allPokemon
+    - Component _PokemonList_
 
-4. _AllPokemon_: Route "/" and "/pokemon":
-
-- prop allPokemon
-- Component _PokemonList_
-
-5. _PokemonDetails_ (Pokemon pop-up): Route "pokemon/{id}": only Pokemon with id = _id_
-
-- API request with param _id_ => pokemon => Component _PokemonDetailed_
+  - _PokemonDetails_ (Pokemon pop-up): Route "pokemon/{id}": only Pokemon with id = _id_
+    - API request with param _id_ => pokemon => Component _PokemonDetailed_
 
 ## Components
 
@@ -49,29 +48,29 @@ Stored in src/components
 
 **Pokemon**
 
-- _PokemonList_ (main page):
+  - _PokemonList_ (main page):
 
-  - prop allPokemon -> map
-  - _Pokemon_ (main page)
-    - prop pokemon
+    - prop allPokemon -> map
+    - _Pokemon_ (main page)
+      - prop pokemon
 
-- _PokemonDetailed_ (Pokemon pop-up)
-  - prop pokemon (from API request in _PokemonDetails_)
-  - breadcrum with name, type & base (API request for each)
+  - _PokemonDetailed_ (Pokemon pop-up)
+    - prop pokemon (from API request in _PokemonDetails_)
+    - breadcrum with name, type & base (API request for each)
 
 **Pokemon fight**
 
-- _PokemonFighter_:
+  - _PokemonFighter_:
 
-- prop: pokemon from _PokemonFight_.pokemonFighters
+    - prop: pokemon from _PokemonFight_.pokemonFighters
 
-contains:
+    contains:
 
-- picture,
-- base statistics (HP, attack, defense, special attack (?), special defense (?), speed (?))
-- buttons: attack, defend, run (?)
+    - picture,
+    - base statistics (HP, attack, defense, special attack (?), special defense (?), speed (?))
+    - buttons: attack, defend, run (?)
 
 **Filters (nice to have)**
 
-- _PokemonTextSearch_ (search field)
-- _PokemonTypeSearch_ (search field with mutiselect)
+  - _PokemonTextSearch_ (search field)
+  - _PokemonTypeSearch_ (search field with mutiselect)
