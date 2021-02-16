@@ -1,6 +1,6 @@
 .info {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   width: 100%;
 }
 .info th {
@@ -14,4 +14,8 @@
 }
 .base th {
   background-color: rgba(0, 0, 0, 0.26);
+}
+.starter {
+  border: 1px solid black;
+  position: relative;
 }

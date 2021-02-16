@@ -1,30 +1,6 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
-//Chip-Component:
-import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
-import Chip from '@material-ui/core/Chip';
+import { Link } from 'react-router-dom';
 import './index.css';
-// const useStyles = makeStyles(theme => ({
-//   root: {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     flexWrap: 'wrap',
-//     '& > *': {
-//       margin: theme.spacing(1.5)
-//     },
-//     padding: 20,
-//     width: 100
-//   },
-//   avatar: {
-//     width: '35%',
-//     height: 'auto'
-//   },
-//   clickable: {
-//     width: '100%',
-//     height: 'auto'
-//   }
-// }));
 
 export default function Pokemon({ pokemon }) {
   // const classes = useStyles();
@@ -39,7 +15,7 @@ export default function Pokemon({ pokemon }) {
         <img className="listImage" src={srcImageUrl} />
         <span>{pokedexId}</span>
         <br></br>
-        <span>{pokemon.name.english}</span>
+        <span>{pokemon.name[0].english}</span>
       </Link>
     </div>
   );

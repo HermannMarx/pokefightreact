@@ -31,11 +31,13 @@ export default function PokemonDetails() {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
 
-  useEffect(() => {
-    axios
+  useEffect(async () => {
+    await axios
       .get(`https://wbsgroup4pokefight.herokuapp.com/pokemon/${id}`)
       .then(response => {
-        setPokemon(response.data);
+        setPokemon(response.data.data);
+        console.log(response.data.data[0]);
+
         setLoading(false);
       });
   }, []);
@@ -60,9 +62,17 @@ export default function PokemonDetails() {
         <Fade in={open}>
           <PokemonDetailed
             id={pokemon[0].id}
-            name={pokemon[0].name.english}
+            name={pokemon[0].name[0].english}
+            abilities={pokemon[0].abilities}
             base={pokemon[0].base}
             type={pokemon[0].type}
+            description={pokemon[0].description}
+            family={pokemon[0].family.evolutionLine}
+            height={pokemon[0].height}
+            weight={pokemon[0].weight}
+            starter={pokemon[0].starter}
+            gen={pokemon[0].gen}
+            image={pokemon[0].sprite}
           />
         </Fade>
       </Modal>

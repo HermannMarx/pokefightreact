@@ -14,6 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Pokemon from '../Pokemon';
 
 const useStyles = makeStyles(theme => ({
   div: {
@@ -43,7 +44,20 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function PokemonDetailed({ id, name, base, type }) {
+export default function PokemonDetailed({
+  id,
+  name,
+  base,
+  abilities,
+  type,
+  description,
+  family,
+  height,
+  weight,
+  starter,
+  gen,
+  image
+}) {
   const pokedexId = '#' + id.toString().padStart(3, '0');
   const srcUrl = 'https://cdn.traction.one/pokedex/pokemon/' + id + '.png';
   const classes = useStyles();
@@ -67,13 +81,9 @@ export default function PokemonDetailed({ id, name, base, type }) {
           title={name}
           subheader={pokedexId}
         />
-        <CardMedia className={classes.media} image={srcUrl} />
+        <CardMedia className={classes.media} image={image} />
         <CardContent>
-          <p>
-            Its oversized claw is very powerful, but when it's not in battle,
-            the claw just gets in the way.
-          </p>
-          <br></br>
+          <p>{description}</p>
           <table className="info">
             <th>Type</th>
             <th>Abilities</th>
@@ -81,27 +91,28 @@ export default function PokemonDetailed({ id, name, base, type }) {
             <th>Weight</th>
             <th>Evolution</th>
             <tr>
-              <td>Type0</td>
-              <td>Ability1</td>
-              <td>2'04</td>
-              <td>15.2 lbs.</td>
-              <td>Bulbasaur</td>
+              <td>{type[0]}</td>
+              <td>{abilities.normal[0]}</td>
+              <td>{height}</td>
+              <td>{weight}</td>
+              {family[0] ? <td>{family[0]}</td> : <td>none</td>}
             </tr>
             <tr>
-              <td>Type1</td>
-              <td>Ability2</td>
+              {type[1] ? <td>{type[1]}</td> : <td></td>}
+              {abilities.hidden[0] ? <td>{abilities.hidden[0]}</td> : <td></td>}
               <td></td>
               <td></td>
-              <td>Ivysaur</td>
+              {family[1] ? <td>{family[1]}</td> : <td></td>}
             </tr>
             <tr>
               <td></td>
               <td></td>
               <td></td>
               <td></td>
-              <td>Venusaur</td>
+              {family[2] ? <td>{family[2]}</td> : <td></td>}
             </tr>
           </table>
+          {starter ? <span className="starter">STARTER</span> : null}
         </CardContent>
 
         <CardActions disableSpacing>
@@ -127,12 +138,12 @@ export default function PokemonDetailed({ id, name, base, type }) {
               <th>Special Defense</th>
               <th>Speed</th>
               <tr>
-                <td>{base['HP']}</td>
-                <td>{base['Attack']}</td>
-                <td>{base['Defense']}</td>
-                <td>{base['Sp. Attack']}</td>
-                <td>{base['Sp. Defense']}</td>
-                <td>{base['Speed']}</td>
+                <td>{base[0]['HP']}</td>
+                <td>{base[0]['Attack']}</td>
+                <td>{base[0]['Defense']}</td>
+                <td>{base[0]['Sp. Attack']}</td>
+                <td>{base[0]['Sp. Defense']}</td>
+                <td>{base[0]['Speed']}</td>
               </tr>
             </table>
           </CardContent>
