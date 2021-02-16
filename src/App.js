@@ -14,7 +14,8 @@ function App() {
     axios
       .get('https://wbsgroup4pokefight.herokuapp.com/pokemon')
       .then(response => {
-        setAllPokemon(response.data);
+        setAllPokemon(response.data.data);
+        console.log('THis is data' + response.data.data[0]);
         console.log(FightLogic.run(101, 3));
       });
   }, []);
