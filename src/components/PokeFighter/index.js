@@ -1,17 +1,25 @@
-import './index.css';
-const PokeFighter = ({ fighter }) => {
+import './styles.css';
+const PokeFighter = ({ name, fighter, id, url, HP, Attack, Defense }) => {
   console.log(fighter);
-  console.log('This is URL' + fighter);
+  console.log('This is Id' + id);
+  console.log('This is URL ' + url);
 
   return (
-    <div className="fightContainer">
-      Pokefighter
-      <div>
-        <img src="" alt="pokefighter" />
+    <div className="pokeFighter">
+      {name}
+      <div className="pokeCenter">
+        <img src={url} alt="pokefighter" />
+        <div className="pokeInfo">
+          <p>HP: {HP}</p>
+          <p>Attack: {Attack}</p>
+          <p>Defense: {Defense}</p>
+        </div>
       </div>
-      <button>Attack</button>
-      <button>Defend</button>
-      <button>Run</button>
+      <div className="fightButtons">
+        <button>Attack</button>
+        <button>Defend</button>
+        <button>Run</button>
+      </div>
     </div>
   );
 };
