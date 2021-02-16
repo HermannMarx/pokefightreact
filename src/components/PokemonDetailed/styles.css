@@ -16,7 +16,7 @@
   background-color: rgba(0, 0, 0, 0.26);
 }
 .starter {
-  border: 1px solid black;
+  border: 1px solid rgba(53, 53, 53, 0.493);
   border-radius: 5px;
   position: relative;
   display: flex;
