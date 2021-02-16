@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route, Router, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import AllPokemon from './views/AllPokemon/index';
 import LandingPage from './views/LandingPage/LandingPage';
-import PokemonDetails from './views/PokemonDetails/index';
 import axios from 'axios';
-import FightLogic from './Helper/FightLogic/FightLogic';
+
 import './App.css';
 
 function App() {
@@ -15,8 +14,6 @@ function App() {
       .get('https://wbsgroup4pokefight.herokuapp.com/pokemon')
       .then(response => {
         setAllPokemon(response.data.data);
-        console.log('THis is data' + response.data.data[0]);
-        console.log(FightLogic.run(101, 3));
       });
   }, []);
 
