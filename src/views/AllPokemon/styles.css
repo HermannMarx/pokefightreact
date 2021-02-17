@@ -3,3 +3,7 @@
   margin: auto;
   justify-content: center;
 }
+.fightContainer {
+  display: flex;
+  flex-direction: row;
+}

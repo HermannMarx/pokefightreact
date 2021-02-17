@@ -6,12 +6,19 @@ import Pokemon from '../Pokemon';
 
 import './index.css';
 
-export default function PokemonList({ allPokemon }) {
+export default function PokemonList({ allPokemon, choose1, choose2 }) {
   return (
     <div className="pokemon-list">
-      {allPokemon.map(pokemon => {
+      {allPokemon.map((pokemon, index) => {
         return (
-          <Pokemon hash={`#${pokemon.id}`} key={pokemon.id} pokemon={pokemon} />
+          <Pokemon
+            hash={`#${pokemon.id}`}
+            key={pokemon.id}
+            pokemon={pokemon}
+            choose1={choose1}
+            choose2={choose2}
+            index={index}
+          />
         );
       })}
       <ScrollToTop showUnder={160}>

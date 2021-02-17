@@ -33,3 +33,13 @@
     width: 45%;
   }
 }
+
+.chooseButtons {
+  display: flex;
+  flex-direction: row;
+}
+button {
+  background-color: #fdcc04;
+  width: 40%;
+  border-radius: 20%;
+}
