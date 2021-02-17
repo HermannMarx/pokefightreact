@@ -1,7 +1,21 @@
 import React, { useState } from 'react';
 
-const pokemon1 = { speed: 100 };
-const pokemon2 = { speed: 101 };
+const pokemon1 = {
+  HP: 45,
+  Attack: 49,
+  Defense: 49,
+  SpAttack: 65,
+  SpDefense: 65,
+  Speed: 45
+};
+const pokemon2 = {
+  HP: 45,
+  Attack: 60,
+  Defense: 69,
+  SpAttack: 85,
+  SpDefense: 85,
+  Speed: 65
+};
 
 const FightLogic = {
   start: id => {
