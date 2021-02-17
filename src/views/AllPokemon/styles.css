@@ -4,11 +4,15 @@
   justify-content: center;
 }
 .fightContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #376abc;
   display: flex;
   flex-direction: row;
   align-items: center;
-
   margin-bottom: 4em;
+  height: 30vh;
 }
 
 .choose {
@@ -17,4 +21,5 @@
   color: #fdcc04;
   width: 30%;
   margin: 0 auto;
+  text-align: center;
 }
