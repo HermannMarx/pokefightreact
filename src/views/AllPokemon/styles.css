@@ -6,4 +6,15 @@
 .fightContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
+
+  margin-bottom: 4em;
+}
+
+.choose {
+  font-size: 4em;
+  font-weight: bold;
+  color: #fdcc04;
+  width: 30%;
+  margin: 0 auto;
 }
