@@ -62,7 +62,7 @@ export default function PokemonDetails() {
         <Fade in={open}>
           <PokemonDetailed
             id={pokemon[0].id}
-            name={pokemon[0].name[0].english}
+            name={pokemon[0].name.english}
             abilities={pokemon[0].abilities}
             base={pokemon[0].base}
             type={pokemon[0].type}

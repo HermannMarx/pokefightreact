@@ -15,7 +15,7 @@ export default function Pokemon({ index, pokemon, choose1, choose2 }) {
         <img className="listImage" src={srcImageUrl} />
         <span>{pokedexId}</span>
         <br></br>
-        <span>{pokemon.name[0].english}</span>
+        <span>{pokemon.name.english}</span>
       </Link>
       <div className="chooseButtons">
         <button

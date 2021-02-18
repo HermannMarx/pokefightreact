@@ -16,6 +16,19 @@
   background-color: rgba(0, 0, 0, 0.26);
 }
 .starter {
-  border: 1px solid black;
+  border: 1px solid rgba(53, 53, 53, 0.493);
+  border-radius: 5px;
   position: relative;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  background-color: #a48735;
+  background-image: linear-gradient(
+    301deg,
+    #a48735 16%,
+    #d8b841 42%,
+    #ffcc70 66%,
+    #f1f288 89%
+  );
+  font-size: 0.5em;
 }
