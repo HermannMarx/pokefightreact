@@ -3,12 +3,14 @@ import { Switch, Route, useParams } from 'react-router-dom';
 import PokemonDetails from '../PokemonDetails';
 import PokemonList from '../../components/PokemonList';
 import PokeFighter from '../../components/PokeFighter';
+import HallOfFame from '../../components/HallOfFame';
 import './styles.css';
 import axios from 'axios';
 
 export default function AllPokemon({ allPokemon }) {
   const [fighter1, setFighter1] = useState(null);
   const [fighter2, setFighter2] = useState(null);
+  const [viewHall, setViewHall] = useState(false);
   let [pokemon1, setPokemon1] = useState();
   let [pokemon2, setPokemon2] = useState();
   let [pokemon1HP, setPokemon1HP] = useState();
@@ -174,11 +176,18 @@ export default function AllPokemon({ allPokemon }) {
           <p className="choose">Choose Pokemon 2</p>
         )}
       </div>
+      <button onClick={() => setViewHall(true)}>Hall of Fame</button>
       <Switch>
         <Route path="/pokemon/:id">
           <PokemonDetails />
         </Route>
       </Switch>
+      {viewHall ? (
+        <HallOfFame
+          allPokemon={allPokemon}
+          closeHall={() => setViewHall(false)}
+        />
+      ) : null}
       <PokemonList
         allPokemon={allPokemon}
         choose1={choose1}
