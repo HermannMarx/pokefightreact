@@ -12,7 +12,6 @@ export default function PokemonList({ allPokemon, choose1, choose2 }) {
       {allPokemon.map((pokemon, index) => {
         return (
           <Pokemon
-            hash={`#${pokemon.id}`}
             key={pokemon.id}
             pokemon={pokemon}
             choose1={choose1}
@@ -22,7 +21,14 @@ export default function PokemonList({ allPokemon, choose1, choose2 }) {
         );
       })}
       <ScrollToTop showUnder={160}>
-        <ArrowUpwardOutlinedIcon />
+        <ArrowUpwardOutlinedIcon
+          style={{
+            width: '2em',
+            height: '2em',
+            backgroundColor: '#a9a9a930',
+            borderRadius: '10px'
+          }}
+        />
       </ScrollToTop>
     </div>
   );

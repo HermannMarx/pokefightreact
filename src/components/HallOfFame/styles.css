@@ -1,8 +1,11 @@
 .hallOfFame {
-  background-color: tomato;
-  color: rgb(0, 255, 0);
-  position: absolute;
-  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.795);
+}
 
-  z-index: 3;
+.hof-list {
+  background-color: rgba(50, 156, 50, 0.788);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: column;
 }

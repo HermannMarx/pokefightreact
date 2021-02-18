@@ -7,19 +7,50 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #376abc;
+  background-color: hsla(217, 55%, 48%, 0.712);
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin-bottom: 4em;
-  height: 30vh;
+  justify-content: space-evenly;
+  min-height: 10vh;
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 
 .choose {
-  font-size: 4em;
   font-weight: bold;
   color: #fdcc04;
-  width: 30%;
-  margin: 0 auto;
+  width: 25%;
+  margin: auto;
+}
+
+.fighter1,
+.fighter2 {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  position: absolute;
+  width: 85%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.hof-span-div {
   text-align: center;
+  margin: 10px auto;
+}
+.hof-span {
+  font-size: 0.75em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.hof-span:hover {
+  color: yellow;
+  text-decoration: underline;
 }

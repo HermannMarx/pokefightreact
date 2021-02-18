@@ -10,27 +10,25 @@ const HallOfFame = ({ allPokemon, closeHall }) => {
       .get('https://wbsgroup4pokefight.herokuapp.com/pokemon/fight/halloffame')
       .then(response => {
         setHall(response.data.data);
-        console.log(response.data.data);
-        console.log('This is Hall of fame' + hall);
       });
   }, []);
 
   return (
     <div className="hallOfFame">
-      <ol>
+      <h1>Hall Of Fame</h1>
+      <ol className="hof-list">
         {hall !== null
           ? hall.map((pokemon, index) => {
               return (
-                <li>
-                  <img src={pokemon.picture} />
-                  Name:
-                  {pokemon.name} Wins: {pokemon.victorycount}
+                <li className="hof-list-item">
+                  <img className="hof-list-item-image" src={pokemon.picture} />
+                  {pokemon.name} {pokemon.victorycount}
                 </li>
               );
             })
           : null}
       </ol>
-      <button onClick={() => closeHall()}>Close</button>
+      <p>--Click Anywhere To Close--</p>
     </div>
   );
 };

@@ -54,6 +54,7 @@ export default function AllPokemon({ allPokemon }) {
     setFighter2(null);
     setTurn1(true);
     setTurn2(false);
+    setViewHall(true);
     //post winner in db
   };
   const postResult = async winnerId => {
@@ -77,7 +78,6 @@ export default function AllPokemon({ allPokemon }) {
     if (hp <= 0) {
       postResult(pokemon1.id);
       fightEnd();
-      return alert('Player1 won the fight!');
     }
   };
   const attack2 = () => {
@@ -88,7 +88,6 @@ export default function AllPokemon({ allPokemon }) {
     if (hp <= 0) {
       postResult(pokemon2.id);
       fightEnd();
-      return alert('Player2 won the fight!');
     }
   };
   const defend1 = () => {
@@ -123,7 +122,16 @@ export default function AllPokemon({ allPokemon }) {
       </header>
       <div className="fightContainer">
         {fighter1 !== null ? (
-          <div>
+          <div className="fighter1">
+            {turn1 && pokemon1 && pokemon2 ? (
+              <div className="fightButtons">
+                <button onClick={() => attack1()}>Attack</button>
+                <button onClick={() => defend1()}>Defend</button>
+                <button onClick={() => run(pokemon1.Speed, pokemon2.Speed)}>
+                  Run
+                </button>
+              </div>
+            ) : null}
             <PokeFighter
               name={pokemon1.name}
               fighter={pokemon1}
@@ -135,22 +143,13 @@ export default function AllPokemon({ allPokemon }) {
               Defense={pokemon1D}
               Speed={pokemon1.Speed}
             />
-            {turn1 && pokemon1 && pokemon2 ? (
-              <div className="fightButtons">
-                <button onClick={() => attack1()}>Attack</button>
-                <button onClick={() => defend1()}>Defend</button>
-                <button onClick={() => run(pokemon1.Speed, pokemon2.Speed)}>
-                  Run
-                </button>
-              </div>
-            ) : null}
           </div>
         ) : (
           <p className="choose">Choose Pokemon 1</p>
         )}
         <p className="choose">VS</p>
         {fighter2 !== null ? (
-          <div>
+          <div className="fighter2">
             <PokeFighter
               name={pokemon2.name}
               fighter={pokemon2}
@@ -176,17 +175,20 @@ export default function AllPokemon({ allPokemon }) {
           <p className="choose">Choose Pokemon 2</p>
         )}
       </div>
-      <button onClick={() => setViewHall(true)}>Hall of Fame</button>
+      <div className="hof-span-div">
+        <span className="hof-span" onClick={() => setViewHall(true)}>
+          -- Visit the Hall of Fame --
+        </span>
+      </div>
       <Switch>
         <Route path="/pokemon/:id">
           <PokemonDetails />
         </Route>
       </Switch>
       {viewHall ? (
-        <HallOfFame
-          allPokemon={allPokemon}
-          closeHall={() => setViewHall(false)}
-        />
+        <div className="hof" onClick={() => setViewHall(false)}>
+          <HallOfFame allPokemon={allPokemon} />
+        </div>
       ) : null}
       <PokemonList
         allPokemon={allPokemon}
