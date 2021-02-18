@@ -144,12 +144,12 @@ export default function PokemonDetailed({
               <th>Special Defense</th>
               <th>Speed</th>
               <tr>
-                <td>{base[0]['HP']}</td>
-                <td>{base[0]['Attack']}</td>
-                <td>{base[0]['Defense']}</td>
-                <td>{base[0]['Sp. Attack']}</td>
-                <td>{base[0]['Sp. Defense']}</td>
-                <td>{base[0]['Speed']}</td>
+                <td>{base['HP']}</td>
+                <td>{base['Attack']}</td>
+                <td>{base['Defense']}</td>
+                <td>{base['Sp. Attack']}</td>
+                <td>{base['Sp. Defense']}</td>
+                <td>{base['Speed']}</td>
               </tr>
             </table>
           </CardContent>

@@ -4,7 +4,6 @@ import PokemonDetails from '../PokemonDetails';
 import PokemonList from '../../components/PokemonList';
 import PokeFighter from '../../components/PokeFighter';
 import './styles.css';
-import { AlternateEmail } from '@material-ui/icons';
 import axios from 'axios';
 
 export default function AllPokemon({ allPokemon }) {
@@ -23,30 +22,30 @@ export default function AllPokemon({ allPokemon }) {
     setFighter1(fighterId);
 
     setPokemon1({
-      name: allPokemon[fighterId].name[0].english,
+      name: allPokemon[fighterId].name.english,
       id: allPokemon[fighterId].id,
       url: allPokemon[fighterId].spriteback,
-      HP: allPokemon[fighterId].base[0].HP,
-      Attack: allPokemon[fighterId].base[0].Attack,
-      Defense: allPokemon[fighterId].base[0].Defense,
-      Speed: allPokemon[fighterId].base[0].Speed
+      HP: allPokemon[fighterId].base.HP,
+      Attack: allPokemon[fighterId].base.Attack,
+      Defense: allPokemon[fighterId].base.Defense,
+      Speed: allPokemon[fighterId].base.Speed
     });
-    setPokemon1HP(allPokemon[fighterId].base[0].HP);
-    setPokemon1D(allPokemon[fighterId].base[0].Defense);
+    setPokemon1HP(allPokemon[fighterId].base.HP);
+    setPokemon1D(allPokemon[fighterId].base.Defense);
   };
   const choose2 = fighterId => {
     setFighter2(fighterId);
     setPokemon2({
-      name: allPokemon[fighterId].name[0].english,
+      name: allPokemon[fighterId].name.english,
       id: allPokemon[fighterId].id,
       url: allPokemon[fighterId].spritefront,
-      HP: allPokemon[fighterId].base[0].HP,
-      Attack: allPokemon[fighterId].base[0].Attack,
-      Defense: allPokemon[fighterId].base[0].Defense,
-      Speed: allPokemon[fighterId].base[0].Speed
+      HP: allPokemon[fighterId].base.HP,
+      Attack: allPokemon[fighterId].base.Attack,
+      Defense: allPokemon[fighterId].base.Defense,
+      Speed: allPokemon[fighterId].base.Speed
     });
-    setPokemon2HP(allPokemon[fighterId].base[0].HP);
-    setPokemon2D(allPokemon[fighterId].base[0].Defense);
+    setPokemon2HP(allPokemon[fighterId].base.HP);
+    setPokemon2D(allPokemon[fighterId].base.Defense);
   };
   const fightEnd = () => {
     setFighter1(null);
