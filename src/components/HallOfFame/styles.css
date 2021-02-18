@@ -1,0 +1,8 @@
+.hallOfFame {
+  background-color: tomato;
+  color: rgb(0, 255, 0);
+  position: absolute;
+  height: 90vh;
+
+  z-index: 3;
+}

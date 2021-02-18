@@ -3,11 +3,13 @@ import { Switch, Route, useParams } from 'react-router-dom';
 import PokemonDetails from '../PokemonDetails';
 import PokemonList from '../../components/PokemonList';
 import PokeFighter from '../../components/PokeFighter';
+import HallOfFame from '../../components/HallOfFame';
 import './styles.css';
 
 export default function AllPokemon({ allPokemon }) {
   const [fighter1, setFighter1] = useState(null);
   const [fighter2, setFighter2] = useState(null);
+  const [viewHall, setViewHall] = useState(true);
 
   const choose1 = fighterId => {
     setFighter1(fighterId);
@@ -58,6 +60,10 @@ export default function AllPokemon({ allPokemon }) {
           <PokemonDetails />
         </Route>
       </Switch>
+      <HallOfFame
+        allPokemon={allPokemon}
+        onClick={() => console.log('It works')}
+      />
       <PokemonList
         allPokemon={allPokemon}
         choose1={choose1}
