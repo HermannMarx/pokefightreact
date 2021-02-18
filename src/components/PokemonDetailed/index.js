@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Pokemon from '../Pokemon';
+import StarsOutlinedIcon from '@material-ui/icons/StarsOutlined';
 
 const useStyles = makeStyles(theme => ({
   div: {
@@ -81,7 +81,14 @@ export default function PokemonDetailed({
           title={name}
           subheader={pokedexId}
         />
-        <CardMedia className={classes.media} image={image} />
+        <CardMedia className={classes.media} image={image}>
+          {starter ? (
+            <span className="starter">
+              <StarsOutlinedIcon />
+              STARTER
+            </span>
+          ) : null}
+        </CardMedia>
         <CardContent>
           <p>{description}</p>
           <table className="info">
@@ -112,7 +119,6 @@ export default function PokemonDetailed({
               {family[2] ? <td>{family[2]}</td> : <td></td>}
             </tr>
           </table>
-          {starter ? <span className="starter">STARTER</span> : null}
         </CardContent>
 
         <CardActions disableSpacing>
@@ -138,12 +144,12 @@ export default function PokemonDetailed({
               <th>Special Defense</th>
               <th>Speed</th>
               <tr>
-                <td>{base[0]['HP']}</td>
-                <td>{base[0]['Attack']}</td>
-                <td>{base[0]['Defense']}</td>
-                <td>{base[0]['Sp. Attack']}</td>
-                <td>{base[0]['Sp. Defense']}</td>
-                <td>{base[0]['Speed']}</td>
+                <td>{base['HP']}</td>
+                <td>{base['Attack']}</td>
+                <td>{base['Defense']}</td>
+                <td>{base['Sp. Attack']}</td>
+                <td>{base['Sp. Defense']}</td>
+                <td>{base['Speed']}</td>
               </tr>
             </table>
           </CardContent>
