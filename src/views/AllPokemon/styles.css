@@ -48,7 +48,7 @@
 .hof-span {
   font-size: 0.75em;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.4s;
 }
 .hof-span:hover {
   color: yellow;
