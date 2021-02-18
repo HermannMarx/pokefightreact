@@ -9,10 +9,6 @@ const PokeFighter = ({
   Attack,
   Defense
 }) => {
-  console.log(fighter);
-  console.log('This is Id' + id);
-  console.log('This is URL ' + url);
-
   return (
     <div className="pokeFighter">
       {name}
