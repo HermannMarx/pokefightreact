@@ -7,8 +7,9 @@
   width: 100%;
   height: auto;
   flex-direction: column;
-  border-radius: 10px;
-  border: 2px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
   background: rgb(180, 64, 58);
   background: linear-gradient(
     210deg,
@@ -16,18 +17,24 @@
     rgba(253, 243, 29, 0.2) 50%,
     rgba(206, 195, 190, 0.2) 100%
   );
+  padding-bottom: 1em;
+  font-size: 0.8em;
 }
 
 .pokemon-card {
   width: 15%;
   margin-top: 5px;
   margin-bottom: 2.5%;
+  border: 2px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
+
 .pokemon-card:hover .cardLink,
 .cardLink:active {
   color: black;
   transition: all 0.75s ease-out;
-  border-radius: 10px;
+
   background: rgb(180, 64, 58);
   background: linear-gradient(
     210deg,
@@ -42,62 +49,62 @@
 }
 .btn-choose-container {
   display: flex;
-  width: 90%;
+  width: 100%;
   justify-content: space-between;
-  bottom: 90%;
-  position: relative;
   margin: auto;
 }
 .btn-choose {
+  border-radius: 0;
   padding: 1em 1em;
+  width: 100%;
   margin: auto;
-  border: 0.5px solid rgba(0, 0, 0, 0);
   transition: all 0.75s;
-
   font-family: 'Lexend Mega', sans-serif;
+  font-size: 1rem;
+  padding: 0.5em 0;
   transition: all ease-in-out 1s;
   transition: all 0.75s ease-in-out;
   color: black;
   background: rgb(180, 64, 58);
   background: linear-gradient(
     210deg,
-    rgba(180, 64, 58, 1) 0%,
-    rgba(253, 243, 29, 1) 50%,
-    rgba(206, 195, 190, 0.767) 100%
+    rgba(180, 64, 58, 0.5) 0%,
+    rgba(253, 243, 29, 0.5) 50%,
+    rgba(206, 195, 190, 0.5) 100%
   );
-  box-shadow: 10px 10px 22px -13px rgba(217, 180, 14, 0.75);
-  -webkit-box-shadow: 10px 10px 42px -13px rgba(217, 203, 14, 0.712);
-  -moz-box-shadow: 10px 10px 22px -13px rgba(217, 170, 14, 0.75);
-  border-color: rgb(255, 255, 255);
+  border: 0.5px solid black;
 }
 .btn-choose:hover {
-  opacity: 1;
   transition: all 0.75s ease-in-out;
+  opacity: 1;
+  border: 1px solid gold;
   color: black;
   background: rgb(180, 64, 58);
   background: linear-gradient(
     210deg,
     rgba(180, 64, 58, 1) 0%,
     rgba(253, 243, 29, 1) 50%,
-    rgba(206, 195, 190, 0.767) 100%
+    rgba(230, 82, 14, 0.767) 100%
   );
   box-shadow: 10px 10px 22px -13px rgba(217, 180, 14, 0.75);
   -webkit-box-shadow: 10px 10px 42px -13px rgba(217, 203, 14, 0.712);
   -moz-box-shadow: 10px 10px 22px -13px rgba(217, 170, 14, 0.75);
-  border-color: rgb(255, 255, 255);
 }
 
 .btn-choose1:hover {
   font-family: 'Lexend Mega', sans-serif;
-  background-color: rgba(255, 0, 0, 0.5);
 }
 .btn-choose2:hover {
   font-family: 'Lexend Mega', sans-serif;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
+@media only screen and (max-width: 850px) {
+  .pokemon-card {
+    width: 20%;
+  }
+}
 @media only screen and (max-width: 600px) {
   .pokemon-card {
-    width: 45%;
+    width: 30%;
   }
 }

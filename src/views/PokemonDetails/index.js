@@ -36,7 +36,6 @@ export default function PokemonDetails() {
       .get(`https://wbsgroup4pokefight.herokuapp.com/pokemon/${id}`)
       .then(response => {
         setPokemon(response.data.data);
-        console.log(response.data.data);
 
         setLoading(false);
       });

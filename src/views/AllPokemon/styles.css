@@ -2,9 +2,11 @@
   display: flex;
   margin: auto;
   justify-content: center;
+  box-sizing: border-box;
 }
 .fightContainer {
   position: -webkit-sticky;
+  z-index: 1;
   position: sticky;
   top: 0;
   background-color: hsla(217, 55%, 48%, 0.712);
@@ -17,6 +19,7 @@
   margin: auto;
   border: 2px solid #ffcd00;
   color: rgb(255, 255, 255);
+  box-sizing: border-box;
 }
 .winner {
   width: 100%;
@@ -66,20 +69,9 @@
   flex-direction: column-reverse;
 }
 
-.hof {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: fixed;
-  width: 85%;
-  z-index: 10;
-  top: 0;
-}
 .hof-span-div {
   text-align: center;
-  margin: 1em;
-  max-height: 80vh;
+  margin: 1.2em auto 2.5em auto;
 }
 .hof-span {
   font-size: 0.8em;
@@ -151,8 +143,5 @@ button:active {
   }
   .winner {
     font-size: 0.8rem;
-  }
-  .hof {
-    width: 95%;
   }
 }
