@@ -3,6 +3,8 @@
   margin: auto;
   z-index: -1;
   font-family: 'Lexend Mega', sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 header {

@@ -68,17 +68,18 @@
 }
 .hof-span-div {
   text-align: center;
-  margin: auto;
+  margin: 1em;
   max-height: 80vh;
 }
 .hof-span {
-  font-size: 0.75em;
+  font-size: 0.8em;
   cursor: pointer;
   transition: all 0.4s;
 }
 .hof-span:hover {
   color: yellow;
   text-decoration: underline;
+  font-size: 0.9rem;
 }
 .versus {
   display: flex;
