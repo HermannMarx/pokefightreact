@@ -61,18 +61,18 @@ export default function PokemonDetails() {
       >
         <Fade in={open}>
           <PokemonDetailed
-            id={pokemon[0].id}
-            name={pokemon[0].name.english}
-            abilities={pokemon[0].abilities}
-            base={pokemon[0].base}
-            type={pokemon[0].type}
-            description={pokemon[0].description}
-            family={pokemon[0].family.evolutionLine}
-            height={pokemon[0].height}
-            weight={pokemon[0].weight}
-            starter={pokemon[0].starter}
-            gen={pokemon[0].gen}
-            image={pokemon[0].sprite}
+            id={pokemon.id}
+            name={pokemon.name.english}
+            abilities={pokemon.abilities}
+            base={pokemon.base}
+            type={pokemon.type}
+            description={pokemon.description}
+            family={pokemon.family.evolutionLine}
+            height={pokemon.height}
+            weight={pokemon.weight}
+            starter={pokemon.starter}
+            gen={pokemon.gen}
+            image={pokemon.sprite}
           />
         </Fade>
       </Modal>
