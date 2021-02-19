@@ -1,11 +1,44 @@
 .hallOfFame {
-  background-color: rgba(255, 255, 255, 0.795);
+  /* background-color: rgba(255, 255, 255, 0.795); */
+  z-index: 10;
+  display: flex;
+  min-width: 25%;
+  height: auto;
 }
 
 .hof-list {
-  background-color: rgba(50, 156, 50, 0.788);
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  flex-direction: column;
+  background: radial-gradient(
+    circle,
+    #e6bc2f 50%,
+    rgba(0, 0, 0, 0.25252107679009106) 100%
+  );
+  background-color: rgba(0, 0, 0, 0);
+  background-color: #e95030;
+  width: 100%;
+  box-shadow: 10px 10px 22px -13px rgba(217, 212, 14, 0.75);
+  -webkit-box-shadow: 10px 10px 42px -13px rgba(217, 212, 14, 0.75);
+  -moz-box-shadow: 10px 10px 22px -13px rgba(217, 212, 14, 0.75);
+  border-color: gold;
+  transition: all 0.75s;
+  margin: auto;
+  padding-bottom: 10%;
+}
+@media only screen and (max-width: 600px) {
+  .hallOfFame {
+    margin: auto;
+    width: 100%;
+  }
+  .hof {
+    width: 100%;
+  }
+  .hof-list {
+    width: 100%;
+  }
+}
+
+.hof-list-item {
+  margin: auto;
+}
+.hof-list-item-image {
+  padding-bottom: 0;
 }

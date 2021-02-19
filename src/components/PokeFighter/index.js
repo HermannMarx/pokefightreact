@@ -11,7 +11,7 @@ const PokeFighter = ({
 }) => {
   return (
     <div className="pokeFighter">
-      {name}
+      <h3>{name}</h3>
       <div className="pokeCenter">
         <img src={url} alt="pokefighter" />
         <div className="pokeInfo">

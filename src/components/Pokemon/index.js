@@ -2,7 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css';
 
-export default function Pokemon({ index, pokemon, choose1, choose2 }) {
+export default function Pokemon({
+  index,
+  pokemon,
+  choose1,
+  choose2,
+  select1,
+  select2
+}) {
   // const classes = useStyles();
   const pokedexId = '#' + pokemon.id.toString().padStart(3, '0');
   return (
@@ -14,22 +21,26 @@ export default function Pokemon({ index, pokemon, choose1, choose2 }) {
         <span>{pokemon.name.english}</span>
       </Link>
       <div className="btn-choose-container">
-        <button
-          className="btn btn-choose1"
-          onClick={() => {
-            choose1(index);
-          }}
-        >
-          Player 1
-        </button>
-        <button
-          className="btn btn-choose2"
-          onClick={() => {
-            choose2(index);
-          }}
-        >
-          Player 2
-        </button>
+        {select1 ? (
+          <button
+            className="btn btn-choose btn-choose1"
+            onClick={() => {
+              choose1(index);
+            }}
+          >
+            1
+          </button>
+        ) : null}
+        {select2 ? (
+          <button
+            className="btn btn-choose btn-choose2"
+            onClick={() => {
+              choose2(index);
+            }}
+          >
+            2
+          </button>
+        ) : null}
       </div>
     </div>
   );

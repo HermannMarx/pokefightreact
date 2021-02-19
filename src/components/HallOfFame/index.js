@@ -7,7 +7,9 @@ const HallOfFame = ({ allPokemon, closeHall }) => {
 
   useEffect(() => {
     axios
-      .get('https://wbsgroup4pokefight.herokuapp.com/pokemon/fight/halloffame')
+      .get(
+        'https://wbsgroup4pokefight.herokuapp.com/pokemon/fight/halloffame?limit=5'
+      )
       .then(response => {
         setHall(response.data.data);
       });
@@ -15,7 +17,6 @@ const HallOfFame = ({ allPokemon, closeHall }) => {
 
   return (
     <div className="hallOfFame">
-      <h1>Hall Of Fame</h1>
       <ol className="hof-list">
         {hall !== null
           ? hall.map((pokemon, index) => {
@@ -28,7 +29,6 @@ const HallOfFame = ({ allPokemon, closeHall }) => {
             })
           : null}
       </ol>
-      <p>--Click Anywhere To Close--</p>
     </div>
   );
 };

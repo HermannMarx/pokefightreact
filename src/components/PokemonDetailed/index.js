@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     maxWidth: 355,
-    border: '5px solid #E95049',
+    border: '5px solid  #c6a8078a',
     backgroundColor: '#E95030',
     background: 'rgb(255,255,255)',
     background:
@@ -59,7 +59,6 @@ export default function PokemonDetailed({
   image
 }) {
   const pokedexId = '#' + id.toString().padStart(3, '0');
-  const srcUrl = 'https://cdn.traction.one/pokedex/pokemon/' + id + '.png';
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
 
