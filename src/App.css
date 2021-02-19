@@ -2,6 +2,9 @@
   width: 85%;
   margin: auto;
   z-index: -1;
+  font-family: 'Lexend Mega', sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 header {
@@ -13,4 +16,17 @@ header {
 .logo {
   max-width: 100%;
   height: auto;
+}
+
+button {
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    width: 95%;
+  }
 }

@@ -7,30 +7,28 @@ const HallOfFame = ({ allPokemon, closeHall }) => {
 
   useEffect(() => {
     axios
-      .get('https://wbsgroup4pokefight.herokuapp.com/pokemon/fight/halloffame')
+      .get(
+        'https://wbsgroup4pokefight.herokuapp.com/pokemon/fight/halloffame?limit=5'
+      )
       .then(response => {
         setHall(response.data.data);
-        console.log(response.data.data);
-        console.log('This is Hall of fame' + hall);
       });
   }, []);
 
   return (
     <div className="hallOfFame">
-      <ol>
+      <ol className="hof-list">
         {hall !== null
           ? hall.map((pokemon, index) => {
               return (
-                <li>
-                  <img src={pokemon.picture} />
-                  Name:
-                  {pokemon.name} Wins: {pokemon.victorycount}
+                <li className="hof-list-item">
+                  <img className="hof-list-item-image" src={pokemon.picture} />
+                  {pokemon.name} {pokemon.victorycount}
                 </li>
               );
             })
           : null}
       </ol>
-      <button onClick={() => closeHall()}>Close</button>
     </div>
   );
 };

@@ -11,6 +11,8 @@ export default function AllPokemon({ allPokemon }) {
   const [fighter1, setFighter1] = useState(null);
   const [fighter2, setFighter2] = useState(null);
   const [viewHall, setViewHall] = useState(false);
+  const [select1, setSelect1] = useState(false);
+  const [select2, setSelect2] = useState(false);
   let [pokemon1, setPokemon1] = useState();
   let [pokemon2, setPokemon2] = useState();
   let [pokemon1HP, setPokemon1HP] = useState();
@@ -19,10 +21,21 @@ export default function AllPokemon({ allPokemon }) {
   let [pokemon2D, setPokemon2D] = useState();
   const [turn1, setTurn1] = useState(true);
   const [turn2, setTurn2] = useState(false);
+  const [turnStyle1, setTurnStyle1] = useState('');
+  const [turnStyle2, setTurnStyle2] = useState('');
+  const [winner, setWinner] = useState();
+
+  const selectSwitch1 = () => {
+    select1 ? setSelect1(false) : setSelect1(true);
+  };
+  const selectSwitch2 = () => {
+    select1 ? setSelect2(false) : setSelect2(true);
+  };
 
   const choose1 = fighterId => {
     setFighter1(fighterId);
-
+    setSelect1(false);
+    setSelect2(true);
     setPokemon1({
       name: allPokemon[fighterId].name.english,
       id: allPokemon[fighterId].id,
@@ -34,9 +47,12 @@ export default function AllPokemon({ allPokemon }) {
     });
     setPokemon1HP(allPokemon[fighterId].base.HP);
     setPokemon1D(allPokemon[fighterId].base.Defense);
+    setTurn1(true);
+    setTurnStyle1('1px solid white');
   };
   const choose2 = fighterId => {
     setFighter2(fighterId);
+    setSelect2(false);
     setPokemon2({
       name: allPokemon[fighterId].name.english,
       id: allPokemon[fighterId].id,
@@ -52,10 +68,14 @@ export default function AllPokemon({ allPokemon }) {
   const fightEnd = () => {
     setFighter1(null);
     setFighter2(null);
-    setTurn1(true);
+    setTurn1(false);
     setTurn2(false);
-    //post winner in db
+    // setViewHall(true);
+    setTurnStyle1('');
+    setTurnStyle2('');
+    setWinner();
   };
+  //post winner in db
   const postResult = async winnerId => {
     const result = {
       pokemon1: pokemon1.id,
@@ -67,28 +87,29 @@ export default function AllPokemon({ allPokemon }) {
       result
     );
     const data = res.data;
-    console.log(data);
   };
   const attack1 = () => {
     let hp = pokemon2HP - pokemon1.Attack;
     setPokemon2HP(hp);
     setTurn1(false);
+    setTurnStyle1('');
+    setTurnStyle2('3px solid red');
     setTurn2(true);
     if (hp <= 0) {
       postResult(pokemon1.id);
-      fightEnd();
-      return alert('Player1 won the fight!');
+      setWinner(pokemon1);
     }
   };
   const attack2 = () => {
     let hp = pokemon1HP - pokemon1.Attack;
     setPokemon1HP(pokemon1HP => pokemon1HP - pokemon2.Attack);
     setTurn1(true);
+    setTurnStyle2('');
+    setTurnStyle1('3px solid white');
     setTurn2(false);
     if (hp <= 0) {
       postResult(pokemon2.id);
-      fightEnd();
-      return alert('Player2 won the fight!');
+      setWinner(pokemon2);
     }
   };
   const defend1 = () => {
@@ -96,17 +117,23 @@ export default function AllPokemon({ allPokemon }) {
     setPokemon1D(0);
     setTurn1(false);
     setTurn2(true);
+    setTurnStyle1('');
+    setTurnStyle2('3px solid red');
   };
   const defend2 = () => {
     setPokemon2HP(pokemon2HP => pokemon2HP + pokemon2D);
     setPokemon2D(0);
     setTurn1(true);
     setTurn2(false);
+    setTurnStyle2('');
+    setTurnStyle1('3px solid white');
   };
   const run = (a, b) => {
     if (a > b) {
       setFighter1(null);
       setFighter2(null);
+      setTurnStyle2('');
+      setTurnStyle1('');
       alert('run successfull');
     } else {
       alert('Your run failed. Prepare to die!');
@@ -121,9 +148,10 @@ export default function AllPokemon({ allPokemon }) {
           src="https://fontmeme.com/permalink/210213/0c674bf6450b9b8545003e3d26a223a8.png"
         />
       </header>
+
       <div className="fightContainer">
         {fighter1 !== null ? (
-          <div>
+          <div className="fighter1" style={{ borderBottom: `${turnStyle1}` }}>
             <PokeFighter
               name={pokemon1.name}
               fighter={pokemon1}
@@ -135,22 +163,43 @@ export default function AllPokemon({ allPokemon }) {
               Defense={pokemon1D}
               Speed={pokemon1.Speed}
             />
-            {turn1 && pokemon1 && pokemon2 ? (
-              <div className="fightButtons">
-                <button onClick={() => attack1()}>Attack</button>
-                <button onClick={() => defend1()}>Defend</button>
-                <button onClick={() => run(pokemon1.Speed, pokemon2.Speed)}>
-                  Run
-                </button>
-              </div>
-            ) : null}
           </div>
         ) : (
-          <p className="choose">Choose Pokemon 1</p>
+          <p className="choose" onClick={() => selectSwitch1()}>
+            Choose Pokemon 1
+          </p>
         )}
-        <p className="choose">VS</p>
+        <div className="versus">
+          {!winner ? <p className="choose">VS</p> : null}
+          {turn1 && pokemon1 && pokemon2 && !winner ? (
+            <div className="fightButtons fightButtons1">
+              <button onClick={() => attack1()}>Attack</button>
+              <button onClick={() => defend1()}>Defend</button>
+              <button onClick={() => run(pokemon1.Speed, pokemon2.Speed)}>
+                Run
+              </button>
+            </div>
+          ) : null}
+          {turn2 && pokemon1 && pokemon2 && !winner ? (
+            <div className="fightButtons fightButtons2">
+              <button onClick={() => attack2()}>Attack</button>
+              <button onClick={() => defend2()}>Defend</button>
+              <button onClick={() => run(pokemon2.Speed, pokemon1.Speed)}>
+                Run
+              </button>
+            </div>
+          ) : null}
+          {winner ? (
+            <div className="winner">
+              <h3>{winner.name} WINS!</h3>
+              <span className="winner-reset" onClick={() => fightEnd()}>
+                --Reset--
+              </span>
+            </div>
+          ) : null}
+        </div>
         {fighter2 !== null ? (
-          <div>
+          <div className="fighter2" style={{ borderBottom: `${turnStyle2}` }}>
             <PokeFighter
               name={pokemon2.name}
               fighter={pokemon2}
@@ -162,36 +211,35 @@ export default function AllPokemon({ allPokemon }) {
               Defense={pokemon2D}
               Speed={pokemon2.Speed}
             />
-            {turn2 && pokemon1 && pokemon2 ? (
-              <div className="fightButtons">
-                <button onClick={() => attack2()}>Attack</button>
-                <button onClick={() => defend2()}>Defend</button>
-                <button onClick={() => run(pokemon2.Speed, pokemon1.Speed)}>
-                  Run
-                </button>
-              </div>
-            ) : null}
           </div>
         ) : (
-          <p className="choose">Choose Pokemon 2</p>
+          <p className="choose" onClick={() => selectSwitch2()}>
+            Choose Pokemon 2
+          </p>
         )}
       </div>
-      <button onClick={() => setViewHall(true)}>Hall of Fame</button>
+
+      <div className="hof-span-div">
+        <span className="hof-span" onClick={() => setViewHall(true)}>
+          -- Visit the Hall of Fame --
+        </span>
+      </div>
       <Switch>
         <Route path="/pokemon/:id">
           <PokemonDetails />
         </Route>
       </Switch>
       {viewHall ? (
-        <HallOfFame
-          allPokemon={allPokemon}
-          closeHall={() => setViewHall(false)}
-        />
+        <div className="hof" onClick={() => setViewHall(false)}>
+          <HallOfFame allPokemon={allPokemon} />
+        </div>
       ) : null}
       <PokemonList
         allPokemon={allPokemon}
         choose1={choose1}
         choose2={choose2}
+        select1={select1}
+        select2={select2}
       />
     </div>
   );
