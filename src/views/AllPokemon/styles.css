@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
+  height: 100vh;
   position: fixed;
   width: 85%;
   z-index: 10;
