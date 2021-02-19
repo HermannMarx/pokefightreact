@@ -1,6 +1,6 @@
 .cardLink {
   text-decoration: none;
-  color: black;
+  color: gold;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -25,6 +25,7 @@
 }
 .pokemon-card:hover .cardLink,
 .cardLink:active {
+  color: black;
   transition: all 0.75s ease-out;
   border-radius: 10px;
   background: rgb(180, 64, 58);
@@ -43,18 +44,31 @@
   display: flex;
   width: 90%;
   justify-content: space-between;
-  bottom: 79%;
+  bottom: 90%;
   position: relative;
   margin: auto;
 }
 .btn-choose {
-  padding: 0.5em 1em;
-  opacity: 0.3;
+  padding: 1em 1em;
+  margin: auto;
   border: 0.5px solid rgba(0, 0, 0, 0);
   transition: all 0.75s;
 
   font-family: 'Lexend Mega', sans-serif;
   transition: all ease-in-out 1s;
+  transition: all 0.75s ease-in-out;
+  color: black;
+  background: rgb(180, 64, 58);
+  background: linear-gradient(
+    210deg,
+    rgba(180, 64, 58, 1) 0%,
+    rgba(253, 243, 29, 1) 50%,
+    rgba(206, 195, 190, 0.767) 100%
+  );
+  box-shadow: 10px 10px 22px -13px rgba(217, 180, 14, 0.75);
+  -webkit-box-shadow: 10px 10px 42px -13px rgba(217, 203, 14, 0.712);
+  -moz-box-shadow: 10px 10px 22px -13px rgba(217, 170, 14, 0.75);
+  border-color: rgb(255, 255, 255);
 }
 .btn-choose:hover {
   opacity: 1;

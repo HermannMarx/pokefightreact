@@ -23,22 +23,22 @@ export default function Pokemon({
       <div className="btn-choose-container">
         {select1 ? (
           <button
-            className="btn btn-choose btn-choose1"
+            className="btn btn-choose"
             onClick={() => {
               choose1(index);
             }}
           >
-            1
+            Select
           </button>
         ) : null}
         {select2 ? (
           <button
-            className="btn btn-choose btn-choose2"
+            className="btn btn-choose"
             onClick={() => {
               choose2(index);
             }}
           >
-            2
+            Select
           </button>
         ) : null}
       </div>
