@@ -9,37 +9,81 @@
   flex-direction: column;
   border-radius: 10px;
   border: 2px solid black;
+  background: rgb(180, 64, 58);
+  background: linear-gradient(
+    210deg,
+    rgba(180, 64, 58, 0.2) 0%,
+    rgba(253, 243, 29, 0.2) 50%,
+    rgba(206, 195, 190, 0.2) 100%
+  );
 }
 
 .pokemon-card {
-  width: 10%;
-  padding: 5px;
+  width: 15%;
+  margin-top: 5px;
+  margin-bottom: 2.5%;
+}
+.pokemon-card:hover .cardLink,
+.cardLink:active {
+  transition: all 0.75s ease-out;
+  border-radius: 10px;
+  background: rgb(180, 64, 58);
+  background: linear-gradient(
+    210deg,
+    rgba(180, 64, 58, 1) 0%,
+    rgba(253, 243, 29, 1) 50%,
+    rgba(206, 195, 190, 0.767) 100%
+  );
+  box-shadow: 10px 10px 22px -13px rgba(217, 212, 14, 0.75);
+  -webkit-box-shadow: 10px 10px 42px -13px rgba(217, 212, 14, 0.75);
+  -moz-box-shadow: 10px 10px 22px -13px rgba(217, 212, 14, 0.75);
+  border-color: gold;
+}
+.btn-choose-container {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  bottom: 79%;
+  position: relative;
+  margin: auto;
+}
+.btn-choose {
+  padding: 0.5em 1em;
+  opacity: 0.3;
+  border: 0.5px solid rgba(0, 0, 0, 0);
+  transition: all 0.75s;
+
+  font-family: 'Lexend Mega', sans-serif;
+  transition: all ease-in-out 1s;
+}
+.btn-choose:hover {
+  opacity: 1;
+  transition: all 0.75s ease-in-out;
+  color: black;
+  background: rgb(180, 64, 58);
+  background: linear-gradient(
+    210deg,
+    rgba(180, 64, 58, 1) 0%,
+    rgba(253, 243, 29, 1) 50%,
+    rgba(206, 195, 190, 0.767) 100%
+  );
+  box-shadow: 10px 10px 22px -13px rgba(217, 180, 14, 0.75);
+  -webkit-box-shadow: 10px 10px 42px -13px rgba(217, 203, 14, 0.712);
+  -moz-box-shadow: 10px 10px 22px -13px rgba(217, 170, 14, 0.75);
+  border-color: rgb(255, 255, 255);
 }
 
-.cardLink:hover {
-  border-radius: 10px;
-  background: rgb(203, 12, 31);
-  background: linear-gradient(
-    180deg,
-    rgba(203, 12, 31, 1) 0%,
-    rgba(253, 255, 255, 1) 20%,
-    rgba(228, 228, 228, 1) 80%,
-    rgba(203, 12, 31, 1) 100%
-  );
+.btn-choose1:hover {
+  font-family: 'Lexend Mega', sans-serif;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.btn-choose2:hover {
+  font-family: 'Lexend Mega', sans-serif;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media only screen and (max-width: 600px) {
   .pokemon-card {
     width: 45%;
   }
-}
-
-.chooseButtons {
-  display: flex;
-  flex-direction: row;
-}
-button {
-  background-color: #fdcc04;
-  width: 40%;
-  border-radius: 20%;
 }

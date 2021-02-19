@@ -7,19 +7,133 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: #376abc;
+  background-color: hsla(217, 55%, 48%, 0.712);
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin-bottom: 4em;
-  height: 30vh;
+  justify-content: space-evenly;
+  min-height: 10vh;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  border: 2px solid #ffcd00;
 }
-
+.winner {
+  width: 100%;
+  z-index: 1000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.winner-reset {
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.winner-reset:hover {
+  color: yellow;
+  text-decoration: underline;
+}
 .choose {
-  font-size: 4em;
   font-weight: bold;
   color: #fdcc04;
-  width: 30%;
-  margin: 0 auto;
+  margin: auto;
+  cursor: pointer;
+}
+
+.fighter1,
+.fighter2 {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pokeCenter {
+  display: flex;
+  flex-direction: column;
+}
+.fighter1 .pokeFighter .pokeCenter {
+  flex-direction: column-reverse;
+}
+
+.hof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  width: 85%;
+  z-index: 10;
+  top: 0;
+}
+.hof-span-div {
   text-align: center;
+  margin: 1em;
+  max-height: 80vh;
+}
+.hof-span {
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.hof-span:hover {
+  color: yellow;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.versus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fightButtons {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.fightButtons button {
+  padding: 8% 0%;
+  margin: 15% 0%;
+  background: none;
+  font-family: inherit;
+  transition: all 0.4s;
+}
+
+.fightButtons1 button {
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.fightButtons1 button:hover,
+button:active {
+  background-color: white;
+  color: red;
+}
+.fightButtons2 button:hover {
+  background-color: rgb(207, 36, 36);
+  color: white;
+}
+.fightButtons2 button {
+  color: rgb(247, 78, 78);
+  border-bottom: 1px solid rgba(245, 148, 148, 0.5);
+  border-top: 1px solid rgba(245, 148, 148, 0.5);
+}
+
+@media only screen and (max-width: 600px) {
+  .fight-container {
+    font-size: 0.8em;
+  }
+  .fighter1 {
+    font-size: 0.8rem;
+  }
+  .fighter2 {
+    font-size: 0.8rem;
+  }
+  .winner {
+    font-size: 0.8rem;
+  }
+  .hof {
+    width: 95%;
+  }
 }
