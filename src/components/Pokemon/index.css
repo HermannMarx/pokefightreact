@@ -98,7 +98,7 @@
   font-family: 'Lexend Mega', sans-serif;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 900px) {
   .pokemon-card {
     width: 20%;
   }
