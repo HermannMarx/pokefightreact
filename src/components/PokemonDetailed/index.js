@@ -65,6 +65,9 @@ export default function PokemonDetailed({
   height,
   weight,
   starter,
+  legendary,
+  mega,
+  mythical,
   gen,
   image
 }) {
@@ -94,6 +97,24 @@ export default function PokemonDetailed({
           <span className="starter">
             <StarsOutlinedIcon />
             STARTER
+          </span>
+        ) : null}
+        {legendary ? (
+          <span className="starter">
+            <StarsOutlinedIcon />
+            LEGENDARY
+          </span>
+        ) : null}
+        {mega ? (
+          <span className="starter">
+            <StarsOutlinedIcon />
+            MEGA
+          </span>
+        ) : null}
+        {mythical ? (
+          <span className="starter">
+            <StarsOutlinedIcon />
+            MYTHICAL
           </span>
         ) : null}
       </CardMedia>
