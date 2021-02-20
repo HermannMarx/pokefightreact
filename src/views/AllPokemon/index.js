@@ -7,7 +7,7 @@ import HallOfFame from '../../components/HallOfFame';
 import './styles.css';
 import axios from 'axios';
 
-export default function AllPokemon({ allPokemon }) {
+export default function AllPokemon({ allPokemon, isLoading }) {
   const [fighter1, setFighter1] = useState(null);
   const [fighter2, setFighter2] = useState(null);
   const [viewHall, setViewHall] = useState(false);
@@ -155,6 +155,13 @@ export default function AllPokemon({ allPokemon }) {
       setTurn2(true);
     }
   };
+  if (isLoading) {
+    return (
+      <div className="isLoading">
+        <span>LOADING POKEMON</span>
+      </div>
+    );
+  }
 
   return (
     <div>
