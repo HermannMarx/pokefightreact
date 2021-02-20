@@ -17,12 +17,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import StarsOutlinedIcon from '@material-ui/icons/StarsOutlined';
 
 const useStyles = makeStyles(theme => ({
-  div: {
-    margin: 'auto'
+  header: {
+    padding: '5px'
   },
   card: {
     maxWidth: 355,
-    border: '5px solid  #c6a8078a',
+    border: '3px solid  #c6a8078a',
     backgroundColor: '#E95030',
     background: 'rgb(255,255,255)',
     background:
@@ -33,7 +33,17 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'contain',
     backgroundColor: 'rgb(255, 255, 255, 0.5)'
   },
+  content: {
+    padding: '10px',
+
+    '&:last-child': { paddingBottom: '0' },
+    root: {
+      padding: '0'
+    }
+  },
   expand: {
+    display: 'flex',
+    alignItems: 'center',
     cursor: 'pointer',
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -66,94 +76,92 @@ export default function PokemonDetailed({
     setExpanded(!expanded);
   };
   return (
-    <div className={classes.div}>
-      <Card className={classes.card}>
-        <CardHeader
-          className={classes.header}
-          action={
-            <IconButton>
-              <Link to="/pokemon">
-                <CloseIcon style={{ color: 'black' }} />
-              </Link>
-            </IconButton>
-          }
-          title={name}
-          subheader={pokedexId}
-        />
-        <CardMedia className={classes.media} image={image}>
-          {starter ? (
-            <span className="starter">
-              <StarsOutlinedIcon />
-              STARTER
-            </span>
-          ) : null}
-        </CardMedia>
-        <CardContent>
-          <p>{description}</p>
-          <table className="info">
-            <th>Type</th>
-            <th>Abilities</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Evolution</th>
+    <Card className={classes.card}>
+      <CardHeader
+        className={classes.header}
+        action={
+          <IconButton>
+            <Link to="/pokemon">
+              <CloseIcon style={{ color: 'black' }} />
+            </Link>
+          </IconButton>
+        }
+        title={name}
+        subheader={pokedexId}
+      />
+      <CardMedia className={classes.media} image={image}>
+        {starter ? (
+          <span className="starter">
+            <StarsOutlinedIcon />
+            STARTER
+          </span>
+        ) : null}
+      </CardMedia>
+      <CardContent className={classes.content}>
+        <p className="description">{description}</p>
+        <table className="info">
+          <th>Type</th>
+          <th>Abilities</th>
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Evolution</th>
+          <tr>
+            <td>{type[0]}</td>
+            <td>{abilities.normal[0]}</td>
+            <td>{height}</td>
+            <td>{weight}</td>
+            {family[0] ? <td>{family[0]}</td> : <td>none</td>}
+          </tr>
+          <tr>
+            {type[1] ? <td>{type[1]}</td> : <td></td>}
+            {abilities.hidden[0] ? <td>{abilities.hidden[0]}</td> : <td></td>}
+            <td></td>
+            <td></td>
+            {family[1] ? <td>{family[1]}</td> : <td></td>}
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            {family[2] ? <td>{family[2]}</td> : <td></td>}
+          </tr>
+        </table>
+      </CardContent>
+
+      <CardActions disableSpacing>
+        <span
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          Stats
+          <ExpandMoreIcon />
+        </span>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent className="classes.content" style={{ padding: '10px' }}>
+          <table className="base">
+            <th>HP</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>Special Attack</th>
+            <th>Special Defense</th>
+            <th>Speed</th>
             <tr>
-              <td>{type[0]}</td>
-              <td>{abilities.normal[0]}</td>
-              <td>{height}</td>
-              <td>{weight}</td>
-              {family[0] ? <td>{family[0]}</td> : <td>none</td>}
-            </tr>
-            <tr>
-              {type[1] ? <td>{type[1]}</td> : <td></td>}
-              {abilities.hidden[0] ? <td>{abilities.hidden[0]}</td> : <td></td>}
-              <td></td>
-              <td></td>
-              {family[1] ? <td>{family[1]}</td> : <td></td>}
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              {family[2] ? <td>{family[2]}</td> : <td></td>}
+              <td>{base['HP']}</td>
+              <td>{base['Attack']}</td>
+              <td>{base['Defense']}</td>
+              <td>{base['Sp. Attack']}</td>
+              <td>{base['Sp. Defense']}</td>
+              <td>{base['Speed']}</td>
             </tr>
           </table>
         </CardContent>
-
-        <CardActions disableSpacing>
-          <span
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            Stats
-            <ExpandMoreIcon />
-          </span>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <table className="base">
-              <th>HP</th>
-              <th>Attack</th>
-              <th>Defense</th>
-              <th>Special Attack</th>
-              <th>Special Defense</th>
-              <th>Speed</th>
-              <tr>
-                <td>{base['HP']}</td>
-                <td>{base['Attack']}</td>
-                <td>{base['Defense']}</td>
-                <td>{base['Sp. Attack']}</td>
-                <td>{base['Sp. Defense']}</td>
-                <td>{base['Speed']}</td>
-              </tr>
-            </table>
-          </CardContent>
-        </Collapse>
-      </Card>
-    </div>
+      </Collapse>
+    </Card>
   );
 }

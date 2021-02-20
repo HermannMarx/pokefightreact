@@ -138,6 +138,21 @@ export default function AllPokemon({ allPokemon }) {
       alert('run successfull');
     } else {
       alert('Your run failed. Prepare to die!');
+      setTurn2(false);
+      setTurn1(true);
+    }
+  };
+  const run2 = () => {
+    if (pokemon1.speed > pokemon2.speed) {
+      setFighter1(null);
+      setFighter2(null);
+      setTurnStyle2('');
+      setTurnStyle1('');
+      alert('run successfull');
+    } else {
+      alert('Your run failed. Prepare to die!');
+      setTurn1(false);
+      setTurn2(true);
     }
   };
 
@@ -167,7 +182,7 @@ export default function AllPokemon({ allPokemon }) {
           </div>
         ) : (
           <p className="choose" onClick={() => selectSwitch1()}>
-            Choose Pokemon 1
+            Click To Choose Pokemon 1
           </p>
         )}
         <div className="versus">

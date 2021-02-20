@@ -2,8 +2,18 @@
   /* background-color: rgba(255, 255, 255, 0.795); */
   z-index: 10;
   display: flex;
-  min-width: 25%;
+  min-width: 45%;
   height: auto;
+}
+.hof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  width: 85%;
+  z-index: 10;
+  top: 0;
 }
 
 .hof-list {
@@ -22,7 +32,26 @@
   transition: all 0.75s;
   margin: auto;
   padding-bottom: 10%;
+  text-align: center;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+  font-size: 1.2em;
 }
+
+.hof-list-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  box-shadow: 0px -5px 5px 0px rgba(255, 215, 0, 0.5) inset;
+  -webkit-box-shadow: 0px -5px 5px 0px rgba(255, 215, 0, 0.5) inset;
+  -moz-box-shadow: 0px -5px 5px 0px rgba(255, 217, 0, 0.507) inset;
+}
+.hof-list-item-image {
+  width: auto;
+}
+
 @media only screen and (max-width: 600px) {
   .hallOfFame {
     margin: auto;
