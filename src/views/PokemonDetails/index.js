@@ -41,11 +41,7 @@ export default function PokemonDetails() {
       });
   }, []);
   if (isLoading) {
-    return (
-      <div className="loading">
-        <CircularProgress color="inherit" />
-      </div>
-    );
+    return <div></div>;
   }
   return (
     <div className="detailBody">
