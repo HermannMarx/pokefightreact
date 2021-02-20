@@ -66,6 +66,9 @@ export default function PokemonDetails() {
             height={pokemon.height}
             weight={pokemon.weight}
             starter={pokemon.starter}
+            legendary={pokemon.legendary}
+            mega={pokemon.mega}
+            mythical={pokemon.mythical}
             gen={pokemon.gen}
             image={pokemon.sprite}
           />
