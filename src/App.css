@@ -1,5 +1,6 @@
 .App {
   width: 85%;
+  max-width: 1500px;
   margin: auto;
   z-index: -1;
   font-family: 'Lexend Mega', sans-serif;
