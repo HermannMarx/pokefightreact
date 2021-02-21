@@ -5,8 +5,8 @@
 - [Description](#description)
 - [Organisation](#organisation)
 - [Data](#data)
-- [Browser Routes](#browser routes)
-- [API Endpoints](#api endpoints)
+- [Routes](#routes)
+- [API-Endpoints](#api-endpoints)
 - [Live](#live)
 - [Programming](#programming)
 
@@ -27,7 +27,7 @@ The data for this project has been obtained from these sources:
 
 Since we were provided with a JSON file that didn't include all the information we wanted to use, we went for a [nice ride](./doc/databasemerge.md) to merge all the information together in a database.
 
-## Browser Routes
+## Routes
 
 The app uses [react-router-dom](https://www.npmjs.com/package/react-router-dom) to set the different routes of the page, which contains the three following routes:
 
@@ -37,7 +37,7 @@ The app uses [react-router-dom](https://www.npmjs.com/package/react-router-dom) 
 | [/pokemon](https://poke-death-fight.netlify.app/pokemon)       | Directs the user onto the main page with all the fetched pokemon data and possible user interaction            |
 | [/pokemon/:id](https://poke-death-fight.netlify.app/pokemon/3) | Directs the user to the specificly chosen pokemon and displays the PokemonDetailed component with information. |
 
-## API Endpoints
+## API-Endpoints
 
 The app uses [Axios](https://www.npmjs.com/package/axios) requests to fetch data from the back-end part which is deployed on [Heroku](https://wbsgroup4pokefight.herokuapp.com/pokemon). The endpoints and specificly fetched data are:
 
