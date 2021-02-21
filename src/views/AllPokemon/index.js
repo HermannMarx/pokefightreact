@@ -17,8 +17,10 @@ export default function AllPokemon({ allPokemon, isLoading }) {
   let [pokemon2, setPokemon2] = useState();
   let [pokemon1HP, setPokemon1HP] = useState();
   let [pokemon1D, setPokemon1D] = useState();
+  const [pokemon1Run, setPokemon1Run] = useState(true);
   let [pokemon2HP, setPokemon2HP] = useState();
   let [pokemon2D, setPokemon2D] = useState();
+  const [pokemon2Run, setPokemon2Run] = useState(true);
   const [turn1, setTurn1] = useState(true);
   const [turn2, setTurn2] = useState(false);
   const [turnStyle1, setTurnStyle1] = useState('');
@@ -102,7 +104,6 @@ export default function AllPokemon({ allPokemon, isLoading }) {
       setWinner(pokemon1);
     }
   };
-  console.log(winner);
   const attack2 = () => {
     let hp = pokemon1HP - Math.floor(pokemon2.Attack * (Math.random() * 1));
     setPokemon1HP(hp);
@@ -134,32 +135,38 @@ export default function AllPokemon({ allPokemon, isLoading }) {
     setTurnStyle1('3px solid white');
   };
   const run1 = () => {
-    if (pokemon1.speed > pokemon2.speed) {
+    console.log(pokemon1.Speed, pokemon2.Speed);
+    if (pokemon1.Speed > pokemon2.Speed) {
       setFighter1(null);
       setFighter2(null);
       setTurnStyle2('');
       setTurnStyle1('');
+      fightEnd();
       alert('run successfull');
     } else {
       setTurn1(false);
       setTurn2(true);
       setTurnStyle1('');
       setTurnStyle2('3px solid red');
+      setPokemon1Run(false);
       alert('Your run failed. Prepare to die!');
     }
   };
   const run2 = () => {
-    if (pokemon1.speed > pokemon2.speed) {
+    console.log(pokemon2.Speed, pokemon1.Speed);
+    if (pokemon2.Speed > pokemon1.Speed) {
       setFighter1(null);
       setFighter2(null);
       setTurnStyle2('');
       setTurnStyle1('');
+      fightEnd();
       alert('run successfull');
     } else {
       setTurn1(true);
       setTurn2(false);
       setTurnStyle1('3px solid white');
       setTurnStyle2('');
+      setPokemon2Run(false);
       alert('Your run failed. Prepare to die!');
     }
   };
@@ -209,7 +216,11 @@ export default function AllPokemon({ allPokemon, isLoading }) {
             <div className="fightButtons fightButtons1">
               <button onClick={() => attack1()}>Attack</button>
               <button onClick={() => defend1()}>Defend</button>
-              <button onClick={() => run1()}>Run</button>
+              {pokemon1Run ? (
+                <button onClick={() => run1()}>Run</button>
+              ) : (
+                <button disabled>Run</button>
+              )}
               <span>{pokemon1.name}'s turn</span>
             </div>
           ) : null}
@@ -217,7 +228,11 @@ export default function AllPokemon({ allPokemon, isLoading }) {
             <div className="fightButtons fightButtons2">
               <button onClick={() => attack2()}>Attack</button>
               <button onClick={() => defend2()}>Defend</button>
-              <button onClick={() => run2()}>Run</button>
+              {pokemon2Run ? (
+                <button onClick={() => run2()}>Run</button>
+              ) : (
+                <button disabled>Run</button>
+              )}
               <span>{pokemon2.name}'s turn</span>
             </div>
           ) : null}
