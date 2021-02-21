@@ -108,7 +108,7 @@
   border: 2px solid #ffcd00;
   color: rgb(255, 255, 255);
   box-sizing: border-box;
-  padding: 1em 0 2em 0;
+  padding: 1em 0;
 }
 .winner {
   width: 100%;

@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 1em;
 }
 .pokeCenter img {
   background: rgb(2, 31, 0);
