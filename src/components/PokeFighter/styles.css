@@ -14,3 +14,12 @@
   );
   border-radius: 50%;
 }
+
+@media only screen and (max-width: 600px) {
+  .pokeFighter {
+    font-size: 0.75rem;
+  }
+  .pokeFighter h3 {
+    font-size: 0.8rem;
+  }
+}

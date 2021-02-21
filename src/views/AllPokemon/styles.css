@@ -97,7 +97,7 @@
   z-index: 1;
   position: sticky;
   top: 0;
-  background-color: hsla(217, 55%, 48%, 0.712);
+  background-color: hsla(217, 55%, 48%, 0.85);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
