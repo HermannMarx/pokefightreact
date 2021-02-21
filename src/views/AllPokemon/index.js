@@ -236,16 +236,16 @@ export default function AllPokemon({ allPokemon, isLoading }) {
               <span>{pokemon2.name}'s turn</span>
             </div>
           ) : null}
-          {winner ? (
-            <div className="winner">
-              <img src={allPokemon[winner.id - 1].sprite} />
-              <h3>{winner.name} WINS!</h3>
-              <span className="winner-reset" onClick={() => fightEnd()}>
-                --Reset--
-              </span>
-            </div>
-          ) : null}
         </div>
+        {winner ? (
+          <div className="winner">
+            <img src={allPokemon[winner.id - 1].sprite} />
+            <h3>{winner.name} WINS!</h3>
+            <span className="winner-reset" onClick={() => fightEnd()}>
+              --Reset--
+            </span>
+          </div>
+        ) : null}
         {pokemon1 && fighter2 !== null && !winner ? (
           <div className="fighter2" style={{ borderBottom: `${turnStyle2}` }}>
             <PokeFighter

@@ -112,6 +112,7 @@
 }
 .winner {
   width: 100%;
+  height: auto;
   z-index: 1000;
   position: relative;
   display: flex;
@@ -277,8 +278,5 @@ button:active {
   }
   .winner {
     font-size: 0.8rem;
-  }
-  .winner img {
-    width: 100%;
   }
 }
