@@ -9,7 +9,7 @@
 
 .base {
   width: 100%;
-  font-size: 0.7em;
+  font-size: 0.6em;
   text-align: center;
 }
 .base th {
@@ -31,4 +31,7 @@
     #f1f288 89%
   );
   font-size: 0.5em;
+}
+.description {
+  font-size: 0.85em;
 }

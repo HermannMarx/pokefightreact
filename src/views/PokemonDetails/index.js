@@ -36,17 +36,12 @@ export default function PokemonDetails() {
       .get(`https://wbsgroup4pokefight.herokuapp.com/pokemon/${id}`)
       .then(response => {
         setPokemon(response.data.data);
-        console.log(response.data.data);
 
         setLoading(false);
       });
   }, []);
   if (isLoading) {
-    return (
-      <div className="loading">
-        <CircularProgress color="inherit" />
-      </div>
-    );
+    return <div></div>;
   }
   return (
     <div className="detailBody">
@@ -71,6 +66,9 @@ export default function PokemonDetails() {
             height={pokemon.height}
             weight={pokemon.weight}
             starter={pokemon.starter}
+            legendary={pokemon.legendary}
+            mega={pokemon.mega}
+            mythical={pokemon.mythical}
             gen={pokemon.gen}
             image={pokemon.sprite}
           />

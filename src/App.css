@@ -1,5 +1,6 @@
 .App {
   width: 85%;
+  max-width: 1500px;
   margin: auto;
   z-index: -1;
   font-family: 'Lexend Mega', sans-serif;
@@ -12,6 +13,7 @@ header {
   text-align: center;
   padding-top: 1%;
   height: auto;
+  margin: 10px auto;
 }
 .logo {
   max-width: 100%;
@@ -27,6 +29,6 @@ button {
 
 @media only screen and (max-width: 600px) {
   .App {
-    width: 95%;
+    width: 99%;
   }
 }

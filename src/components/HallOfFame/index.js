@@ -17,18 +17,36 @@ const HallOfFame = ({ allPokemon, closeHall }) => {
 
   return (
     <div className="hallOfFame">
-      <ol className="hof-list">
+      <ul className="hof-list">
+        <li className="hof-header">
+          <h2>HALL OF FAME</h2>
+        </li>
+        <li className="hof-list-item">
+          <div className="hof-list-item-content">
+            <span>#Rank</span>
+            <span></span>
+            <img className="hof-list-item-image" />
+            <span>Name</span> <span>WINS</span>
+          </div>
+        </li>
         {hall !== null
           ? hall.map((pokemon, index) => {
               return (
                 <li className="hof-list-item">
-                  <img className="hof-list-item-image" src={pokemon.picture} />
-                  {pokemon.name} {pokemon.victorycount}
+                  <div className="hof-list-item-content">
+                    <span>#{index + 1}</span>
+                    <img
+                      className="hof-list-item-image"
+                      src={pokemon.picture}
+                    />
+                    <span>{pokemon.name}</span>{' '}
+                    <span>{pokemon.victorycount}</span>
+                  </div>
                 </li>
               );
             })
           : null}
-      </ol>
+      </ul>
     </div>
   );
 };

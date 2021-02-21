@@ -8,12 +8,5 @@
   height: 100vh;
 }
 .loading {
-  z-index: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  margin: auto;
+  display: none;
 }
