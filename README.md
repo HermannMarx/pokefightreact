@@ -52,7 +52,7 @@ The app uses [Axios](https://www.npmjs.com/package/axios) requests to fetch data
 
 ## Live
 
-The front-end application is hosted on [Netlfiy](https://poke-death-fight.netlify.app/pokemon). Consult the [architecture](./doc/architecture.md) for more information about the overall structure, views and components.
+The front-end application is hosted on [Netlfiy](https://poke-death-fight.netlify.app). Consult the [architecture](./doc/architecture.md) for more information about the overall structure, views and components.
 
 ## Programming
 
