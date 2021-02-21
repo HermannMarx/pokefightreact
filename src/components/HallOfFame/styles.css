@@ -5,6 +5,14 @@
   min-width: 45%;
   height: auto;
 }
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .hof {
   display: flex;
   justify-content: center;
@@ -14,9 +22,11 @@
   width: 85%;
   z-index: 10;
   top: 0;
+  animation: fadeIn 0.8s ease-in;
 }
 
 .hof-list {
+  opacity: 0.85;
   background: radial-gradient(
     circle,
     #e6bc2f 50%,
