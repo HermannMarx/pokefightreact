@@ -279,4 +279,7 @@ button:active {
   .winner {
     font-size: 0.8rem;
   }
+  .versus {
+    max-width: 100px;
+  }
 }
