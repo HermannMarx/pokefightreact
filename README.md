@@ -4,8 +4,9 @@
 
 - [Description](#description)
 - [Organisation](#organisation)
-- [Data](#data)
+- [Architecture](#architecture)
 - [Routes](#routes)
+- [Back-End](#back-end)
 - [API-Endpoints](#api-endpoints)
 - [Live](#live)
 - [Programming](#programming)
@@ -18,14 +19,9 @@ This repository contains the front-end part of a Pokemon Fight application, crea
 
 [Trello board](https://trello.com/b/Icz4WKYA/group4-pokefight)
 
-## Data
+## Architecture
 
-The data for this project has been obtained from these sources:
-
-- https://pokedevs.gitbook.io/pokedex/resources/pokemon
-- https://pokeapi.co/
-
-Since we were provided with a JSON file that didn't include all the information we wanted to use, we went for a [nice ride](./doc/databasemerge.md) to merge all the information together in a database.
+In the specific doc [architecture.md](./doc/architecture.md) is the information about the overall structure, views and components.
 
 ## Routes
 
@@ -37,9 +33,13 @@ The app uses [react-router-dom](https://www.npmjs.com/package/react-router-dom) 
 | [/pokemon](https://poke-death-fight.netlify.app/pokemon)       | Directs the user onto the main page with all the fetched pokemon data and possible user interaction            |
 | [/pokemon/:id](https://poke-death-fight.netlify.app/pokemon/3) | Directs the user to the specificly chosen pokemon and displays the PokemonDetailed component with information. |
 
+## Back-End
+
+The back-end part of this project has got its own [GitHub reposetory](https://github.com/vibueno/wbs_group4_pokefight). It retrieves its data from a [MongoDB](https://www.mongodb.com/) database by using [mongoose.js](https://mongoosejs.com). The back-end app is deployed on [Heroku](https://wbsgroup4pokefight.herokuapp.com/pokemon).
+
 ## API-Endpoints
 
-The app uses [Axios](https://www.npmjs.com/package/axios) requests to fetch data from the back-end part which is deployed on [Heroku](https://wbsgroup4pokefight.herokuapp.com/pokemon). The endpoints and specificly fetched data are:
+The app uses [Axios](https://www.npmjs.com/package/axios) requests to fetch data from the back-end part. Its endpoints and specificly fetched data are:
 
 | HTTP Method | Endpoint                                                                                                       | Description                                                                                                                  |
 | ----------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -52,13 +52,12 @@ The app uses [Axios](https://www.npmjs.com/package/axios) requests to fetch data
 
 ## Live
 
-The front-end application is hosted on [Netlfiy](https://poke-death-fight.netlify.app). Consult the [architecture](./doc/architecture.md) for more information about the overall structure, views and components.
+The front-end application is hosted on [Netlfiy](https://poke-death-fight.netlify.app).
 
 ## Programming
 
-This project has been developed using [NodeJS](https://nodejs.org/en) and [React.js](https://reactjs.org).
+This project has been developed using [NodeJS](https://nodejs.org/en) and [React.js](https://reactjs.org). Some of our components have been programmed with [Material UI](https://material-ui.com). Its already predefined components made it possible to design the app more time efficient.
 
 ### Helpers
 
 - [Prettier](https://prettier.io/): [install Prettier](https://prettier.io/docs/en/editors.html) for your code editor. Prettier can run 'on file save', so that you don't need to run it manually. Look for instructions on how to set it up in your code editor, if needed.
-- [Material UI](https://material-ui.com) has been used for styling. Its already predefined components made it possible to design the app more time efficient.
