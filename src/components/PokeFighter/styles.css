@@ -1,0 +1,25 @@
+.pokeFighter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
+.pokeCenter img {
+  background: rgb(2, 31, 0);
+  background: radial-gradient(
+    circle,
+    rgba(2, 31, 0, 0) 17%,
+    rgba(255, 205, 0, 0.5) 100%
+  );
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .pokeFighter {
+    font-size: 0.75rem;
+  }
+  .pokeFighter h3 {
+    font-size: 0.8rem;
+  }
+}

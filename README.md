@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Pokefight - with React.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Description](#description)
+- [Organisation](#organisation)
+- [Architecture](#architecture)
+- [Routes](#routes)
+- [Back-End](#back-end)
+- [API-Endpoints](#api-endpoints)
+- [Live](#live)
+- [Programming](#programming)
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+This repository contains the front-end part of a Pokemon Fight application, created for a WBS Coding School assignment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Organisation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Trello board](https://trello.com/b/Icz4WKYA/group4-pokefight)
 
-### `npm test`
+## Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In the specific doc [architecture.md](./doc/architecture.md) is the information about the overall structure, views and components.
 
-### `npm run build`
+## Routes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app uses [react-router-dom](https://www.npmjs.com/package/react-router-dom) to set the different routes of the page, which contains the three following routes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Route                                                          | Description                                                                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| [/](https://poke-death-fight.netlify.app/)                     | Directs the user onto the landing page.                                                                        |
+| [/pokemon](https://poke-death-fight.netlify.app/pokemon)       | Directs the user onto the main page with all the fetched pokemon data and possible user interaction            |
+| [/pokemon/:id](https://poke-death-fight.netlify.app/pokemon/3) | Directs the user to the specificly chosen pokemon and displays the PokemonDetailed component with information. |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Back-End
 
-### `npm run eject`
+The back-end part of this project has got its own [GitHub reposetory](https://github.com/vibueno/wbs_group4_pokefight). It retrieves its data from a [MongoDB](https://www.mongodb.com/) database by using [mongoose.js](https://mongoosejs.com). The back-end app is deployed on [Heroku](https://wbsgroup4pokefight.herokuapp.com/pokemon).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## API-Endpoints
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app uses [Axios](https://www.npmjs.com/package/axios) requests to fetch data from the back-end part. Its endpoints and specificly fetched data are:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| HTTP Method | Endpoint                                                                                                       | Description                                                                                                                  |
+| ----------- | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| GET         | [/pokemon](https://wbsgroup4pokefight.herokuapp.com/pokemon)                                                   | Retrieves all pokemon                                                                                                        |
+| GET         | [/pokemon/:id](https://wbsgroup4pokefight.herokuapp.com/pokemon/76)                                            | Retrieves pokemon with id 1                                                                                                  |
+| GET         | [/pokemon/:id/:info](https://wbsgroup4pokefight.herokuapp.com/pokemon/76/name)                                 | Retrieves specific info (type, name or type) from pokemon with id 1                                                          |
+| GET         | [/pokemon/fight/halloffame](https://wbsgroup4pokefight.herokuapp.com/pokemon/fight/halloffame)                 | Retrieves top 10 pokemon from hall of fame                                                                                   |
+| GET         | [/pokemon/fight/halloffame?limit=n](https://wbsgroup4pokefight.herokuapp.com/pokemon/fight/halloffame?limit=4) | Retrieves _n_ pokemon from hall of fame                                                                                      |
+| POST        | /pokemon/fight/create                                                                                          | Saves a fight result. Request body must contain a JSON object with format: `{"pokemon1": id, "pokemon2": id, "winner:" id }` |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Live
 
-## Learn More
+The front-end application is hosted on [Netlfiy](https://poke-death-fight.netlify.app).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Programming
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project has been developed using [NodeJS](https://nodejs.org/en) and [React.js](https://reactjs.org). Some of our components have been programmed with [Material UI](https://material-ui.com). Its already predefined components made it possible to design the app more time efficient.
 
-### Code Splitting
+### Helpers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Prettier](https://prettier.io/): [install Prettier](https://prettier.io/docs/en/editors.html) for your code editor. Prettier can run 'on file save', so that you don't need to run it manually. Look for instructions on how to set it up in your code editor, if needed.

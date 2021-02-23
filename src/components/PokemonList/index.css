@@ -1,0 +1,23 @@
+.pokemon-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.scrollLink {
+  display: flex;
+  position: fixed;
+  right: 2%;
+  top: 50%;
+  flex-direction: column;
+}
+
+.scrollButton {
+  background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .pokemon-list {
+    justify-content: space-evenly;
+  }
+}
